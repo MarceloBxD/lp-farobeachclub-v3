@@ -1,0 +1,38 @@
+.container {
+  width: 100%;
+  overflow: hidden;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 15px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  .button {
+    display: flex !important;
+    width: 100% !important;
+    height: 100%;
+    text-align: left;
+    justify-content: space-between;
+    padding: 5px 10px;
+    align-items: center;
+
+    .chevronIcon {
+      width: 36px;
+      height: 36px;
+      transition: transform 0.3s;
+    }
+
+    .rotate {
+      transform: rotate(180deg);
+    }
+  }
+
+  .content {
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
+
+    .contentText {
+      padding: 10px;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.container {
+  margin: auto;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .container {
+    margin: 0 !important;
+  }
+}
+.container > div {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+@media (max-width: 768px) {
+  .container > div {
+    padding: 0 10px !important;
+  }
+}

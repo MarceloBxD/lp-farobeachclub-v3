@@ -1,0 +1,26 @@
+.title {
+  margin: -20px auto 24px;
+}
+
+.customersContainer {
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.customerItem {
+  width: 200px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+
+  &:hover {
+    filter: grayscale(0%);
+    cursor: pointer;
+  }
+}

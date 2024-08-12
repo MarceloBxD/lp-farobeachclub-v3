@@ -1,0 +1,60 @@
+@import "swiper/css";
+
+.swiper-pagination {
+  width: 150px !important;
+  bottom: 28px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #000 !important;
+  width: 20px !important;
+  border-radius: 10px !important;
+  opacity: 1;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: "" !important;
+}
+
+/* BUTTON PREV */
+.swiper-button-prev {
+  background-image: url(../assets/imgs/arrow-left.png);
+  width: 48px !important;
+  height: 48px !important;
+
+  bottom: 8px !important;
+  top: unset !important;
+  left: 24px !important;
+}
+
+.swiper-button-disabled.swiper-button-prev {
+  background-image: url(../assets/imgs/arrow-left-disabled.png);
+}
+
+/*  BUTTON NEXT */
+.swiper-button-next {
+  background-image: url(../assets/imgs/arrow-right.png);
+  width: 48px !important;
+  height: 48px !important;
+
+  bottom: 8px !important;
+  top: unset !important;
+  right: 24px !important;
+
+}
+
+.swiper-button-disabled.swiper-button-next {
+  background-image: url(../assets/imgs/arrow-right-disabled.png);
+}
+
+
+@media (max-width: 768px) {
+  .swiper-button-next {
+    right: 10px !important;
+  }
+
+  .swiper-button-prev {
+    left: 10px !important;
+  }
+}

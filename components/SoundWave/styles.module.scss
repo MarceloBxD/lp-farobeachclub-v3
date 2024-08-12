@@ -1,0 +1,30 @@
+.container {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  height: 55px;
+  width: 55px;
+
+  border: 2px solid #83a3a1;
+  border-radius: 50%;
+  padding: 8px;
+
+  cursor: pointer;
+
+  > span {
+    display: inline;
+    border: 1.5px solid #83a3a1;
+    height: 100%;
+  }
+
+  @media (max-width: 768px) {
+    width: 44px;
+    height: 44px;
+  }
+}

@@ -1,0 +1,48 @@
+.card {
+  width: 100%;
+  min-width: 245px;
+  height: 350px;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  padding: 12px;
+  cursor: pointer;
+
+
+box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+
+  @media (max-width: 768px) {
+    height: 400px;
+  }
+}
+
+.content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 12px;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 10.1%,
+    rgba(0, 0, 0, 0.5) 72.82%
+  );
+}
+
+.cardContent {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 21px;
+  top: 21px;
+}
+
+.img {
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+}

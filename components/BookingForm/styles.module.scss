@@ -1,0 +1,36 @@
+.container {
+  width: 570px;
+  height: 95%;
+  background-color: #fff;
+  border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+  z-index: 999999;
+  position: fixed;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  gap: 24px;
+  position: relative;
+    height: 100dvh;
+    overflow: auto;
+    border-radius: 0;
+  }
+}
+
+.headerBookingForm {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 48px 50px 0;
+
+  @media (max-width: 768px) {
+    padding: 32px 32px 0;
+  }
+}
+
+.closeIcon {
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+}

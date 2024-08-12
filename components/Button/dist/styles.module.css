@@ -1,0 +1,36 @@
+.button {
+  width: fit-content;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  border-radius: 40px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-width: 1px;
+  border-style: solid;
+}
+@media (max-width: 410px) {
+  .button {
+    padding: 0 12px;
+    margin-left: -5px;
+    height: 38px;
+    width: 60%;
+  }
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+@media (max-width: 768px) {
+  .icon {
+    width: 18px;
+    height: 18px;
+  }
+}

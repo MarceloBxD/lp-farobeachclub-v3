@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://farobeachclub.com.br/
+
+# Sitemaps
+Sitemap: https://farobeachclub.com.br/sitemap.xml

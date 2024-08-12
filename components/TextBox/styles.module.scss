@@ -1,0 +1,33 @@
+.balao {
+  position: absolute;
+  padding: 7px;
+  max-width: 250px;
+  width: fit-content;
+  background-color: #83a3a1;
+  color: #fff;
+  border-radius: 10px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.seta {
+  position: absolute;
+  bottom: -10px; /* Ajuste a posição vertical da seta conforme necessário */
+  right: 10px; /* Ajuste a posição horizontal da seta conforme necessário */
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #83a3a1; /* Cor de fundo da seta, deve coincidir com a cor do balão */
+}
+
+.balaoWhatsapp {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff; /* Cor do texto do botão */
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+}

@@ -1,0 +1,29 @@
+.card {
+  width: 100%;
+  min-width: 290px;
+  height: 505px;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  padding: 12px;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .card {
+    height: 400px;
+  }
+}
+
+.content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 12px;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 10.1%, rgba(0, 0, 0, 0.5) 72.82%);
+}

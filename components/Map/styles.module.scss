@@ -1,0 +1,14 @@
+.container {
+  height: 250px;
+  width: 40%;
+
+  background-color: gray;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    width: 100%;
+  }
+}

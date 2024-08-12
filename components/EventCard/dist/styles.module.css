@@ -1,0 +1,41 @@
+.card {
+  height: fit-content;
+  width: 345px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: 16px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0) 61.46%);
+}
+@media (max-width: 1024px) {
+  .card {
+    min-width: 370px;
+  }
+}
+@media (max-width: 768px) {
+  .card {
+    min-width: 270px;
+  }
+}
+
+.card_bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+}
+@media (max-width: 1024px) {
+  .card_bottom {
+    flex-direction: column;
+  }
+  .card_bottom button {
+    width: 100%;
+  }
+}
+
+.card_bottom_text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

@@ -11,7 +11,7 @@ const DisclosureEvent: React.FC<DisclosureEventProps> = ({ event }) => {
   if (!event) return null;
   return (
     <div className={styles.wrapper}>
-      <EventCard
+      {/* <EventCard
         title={event.title}
         date={event.date}
         description={event.description}
@@ -22,7 +22,7 @@ const DisclosureEvent: React.FC<DisclosureEventProps> = ({ event }) => {
         instagram={event.instagram}
         disclosure={event.disclosure}
         bannerCard={true}
-      />
+      /> */}
     </div>
   );
 };

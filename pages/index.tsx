@@ -123,19 +123,19 @@ function Home({
         })}
       />
 
-      <Midia
+      {/* <Midia
         category="SHOWS REALIZADOS"
         content={midia?.filter((item) => {
           return item.category === "SHOWS REALIZADOS";
         })}
-      />
-
+      /> */}
+{/* 
       <Midia
         category="ASSESSORIA DE IMPRENSA"
         content={midia?.filter((item) => {
           return item.category === "ASSESSORIA DE IMPRENSA";
         })}
-      />
+      /> */}
 
       <Faq faq={faqData} />
       <Clientes customers={customers} />

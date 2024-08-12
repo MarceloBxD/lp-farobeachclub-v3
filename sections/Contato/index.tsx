@@ -37,43 +37,18 @@ const Contato: React.FC<ContatoProps> = ({ children, phone, ...props }) => {
           <br />
           contato@farobeachclub.com.br
         </Description>
-        <div
-          className={styles.phones_container}
-        >
+        <div className={styles.phones_container}>
           <PhoneButtonLabel
             button={{
               icon: <WhatsappIcon fill={"#00A000"} />,
               phone: "5521995521979",
             }}
             label={{
-              title: "Corporativo, Formaturas e Outros",
+              title: "",
             }}
             whatsapp={{
-              message: "Olá, vim pelo site do Faro Beach Club e gostaria de falar com um especialista sobre Eventos Corporativos.",
-            }}
-          />
-          <PhoneButtonLabel
-            button={{
-              icon: <WhatsappIcon fill={"#00A000"} />,
-              phone: "5521997130244",
-            }}
-            label={{
-              title: "Shows e Festas",
-            }}
-            whatsapp={{
-              message: "Olá, vim pelo site do Faro Beach Club e gostaria de falar com um especialista sobre Shows e Festas.",
-            }}
-          />
-          <PhoneButtonLabel
-            button={{
-              icon: <WhatsappIcon fill={"#00A000"} />,
-              phone: "5521995521979",
-            }}
-            label={{
-              title: "Casamentos",
-            }}
-            whatsapp={{
-              message: "Olá, vim pelo site do Faro Beach Club e gostaria de falar com um especialista sobre Casamentos.",
+              message:
+                "Olá, vim pelo site do Faro Beach Club e gostaria de falar com um especialista sobre Eventos Corporativos.",
             }}
           />
         </div>

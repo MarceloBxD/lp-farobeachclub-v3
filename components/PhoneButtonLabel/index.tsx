@@ -16,7 +16,7 @@ export interface PhoneButtonLabelProps {
   };
   whatsapp: {
     message: string;
-  }
+  };
 }
 
 export const PhoneButtonLabel = ({
@@ -61,9 +61,11 @@ export const PhoneButtonLabel = ({
           {text}
         </Button>
       </Link>
-      <small style={{
-        color: "#555",
-      }}>
+      <small
+        style={{
+          color: "#555",
+        }}
+      >
         <a href={`tel:${phone}`}>{formattedPhoneToPrint}</a>
       </small>
     </div>

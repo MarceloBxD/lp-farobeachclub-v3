@@ -104,6 +104,7 @@ function Home({
         anchor={eventContent[1].anchor}
         inverse
       />
+      
 
       <TitleTextSwiper
         texts={eventContent[2].texts}

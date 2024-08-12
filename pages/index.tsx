@@ -104,7 +104,7 @@ function Home({
         anchor={eventContent[1].anchor}
         inverse
       />
-      
+      // novo comentário
 
       <TitleTextSwiper
         texts={eventContent[2].texts}

@@ -25,5 +25,9 @@
   display: flex;
   gap: 8px;
   flex-direction: column;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 10.1%, rgba(0, 0, 0, 0.5) 72.82%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 10.1%,
+    rgba(0, 0, 0, 0.5) 72.82%
+  );
 }

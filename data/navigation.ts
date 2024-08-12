@@ -13,22 +13,22 @@ export const navigation: NavigationItem[] = [
   },
   {
     id: 1,
-    title: "Conheça o espaço",
-    href: "/#beachclub",
+    title: "Eventos",
+    href: "/#eventos",
   },
   {
     id: 2,
-    title: "Eventos Realizados",
-    href: "/#eventos-privados",
+    title: "Quem Somos",
+    href: "/#quem-somos",
   },
   {
     id: 3,
-    title: "Programação",
-    href: "/programacao",
+    title: "Serviços",
+    href: "#/servicos",
   },
   {
     id: 4,
     title: "Contato",
-    href: "#contato",
+    href: "/#contato",
   },
 ];

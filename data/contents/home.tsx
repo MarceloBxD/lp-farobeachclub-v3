@@ -10,16 +10,20 @@ export const eventContent: ContentProps[] = [
       description: (
         <>
           <p>
-            Somos um local que combina o estilo de vida europeu com a energia
-            única do Rio de Janeiro. Oferecemos conforto, alta gastronomia e
-            alegria carioca, proporcionando uma experiência incrível para todas
-            as tribos, celebrando diversidade, igualdade e mantendo sempre o
-            respeito ao meio ambiente como uma de nossas principais
-            preocupações.
-            <br />
-            <br />
-            Nosso espaço dispõe de estrutura altamente versátil para atender
-            você de forma única e exclusiva para receber
+            Nos últimos dois anos, estabelecemos conexões memoráveis com mais de
+            150 clientes, proporcionando experiências extraordinárias em{" "}
+            <b>
+              eventos Corporativos, Festas de Fim de Ano, Formaturas,
+              Aniversários, Casamentos, Plenárias
+            </b>{" "}
+            e muito mais. Além disso, orgulhamo-nos de ter realizado mais de 120
+            shows inesquecíveis, trazendo artistas renomados do cenário mundial
+            para nossos palcos.
+          </p>
+          <p>
+            Estamos prontos para construir parcerias estratégicas e oferecer a
+            você toda nossa <b>expertise</b> para
+            <br /> transformar o <b>seu evento em uma experiencia de sucesso</b>
           </p>
 
           <ul
@@ -40,15 +44,15 @@ export const eventContent: ContentProps[] = [
                 color: "#83A3A1",
                 fontSize: "19px",
               }}
-              >
+            >
               <b>Festas de Fim de Ano</b>
-              </li>
-              <li
-                style={{
-                  fontWeight: 900,
-                  color: "#83A3A1",
-                  fontSize: "19px"
-                }}
+            </li>
+            <li
+              style={{
+                fontWeight: 900,
+                color: "#83A3A1",
+                fontSize: "19px",
+              }}
             >
               <b>Shows</b>
             </li>
@@ -56,7 +60,7 @@ export const eventContent: ContentProps[] = [
               style={{
                 fontWeight: 900,
                 color: "#83A3A1",
-                fontSize: "19px"
+                fontSize: "19px",
               }}
             >
               <b>Eventos Corporativos</b>
@@ -65,7 +69,7 @@ export const eventContent: ContentProps[] = [
               style={{
                 fontWeight: 900,
                 color: "#83A3A1",
-                fontSize: "19px"
+                fontSize: "19px",
               }}
             >
               <b>Formaturas</b>
@@ -74,7 +78,7 @@ export const eventContent: ContentProps[] = [
               style={{
                 fontWeight: 900,
                 color: "#83A3A1",
-                fontSize: "19px"
+                fontSize: "19px",
               }}
             >
               <b>Casamentos</b>
@@ -83,7 +87,7 @@ export const eventContent: ContentProps[] = [
               style={{
                 fontWeight: 900,
                 color: "#83A3A1",
-                fontSize: "19px"
+                fontSize: "19px",
               }}
             >
               <b>Muito Mais!</b>
@@ -95,27 +99,66 @@ export const eventContent: ContentProps[] = [
         <div
           style={{
             textAlign: "center",
+            display: "flex",
+            flexDirection: "column",
+            gap: "1rem",
           }}
         >
-          O LOCAL <br className="desktop" />
-          <span
+          <div>
+            O Local <br className="desktop" />
+            <span
+              style={{
+                fontWeight: 900,
+                color: "#83A3A1",
+              }}
+            >
+              Exclusivo{" "}
+            </span>
+            <br />
+            Para Eventos{" "}
+            <span
+              style={{
+                fontWeight: 900,
+                color: "#83A3A1",
+              }}
+            >
+              Inesquecíveis
+            </span>
+          </div>
+
+          <div
             style={{
-              fontWeight: 900,
-              color: "#83A3A1",
+              fontSize: "1.5rem",
             }}
           >
-            EXCLUSIVO{" "}
-          </span>
-          <br />
-          PARA EVENTOS{" "}
-          <span
-            style={{
-              fontWeight: 900,
-              color: "#83A3A1",
-            }}
-          >
-            INESQUECÍVEIS
-          </span>
+            <span
+              style={{
+                fontWeight: 900,
+                color: "#83A3A1",
+              }}
+            >
+              Transforme{" "}
+            </span>
+            <br />
+            Seu Evento com o{" "}
+            <span
+              style={{
+                fontWeight: 900,
+                color: "#83A3A1",
+              }}
+            >
+              Charme
+            </span>
+            <br /> do{" "}
+            <span
+              style={{
+                fontWeight: 900,
+                color: "#83A3A1",
+              }}
+            >
+              Faro Beach Club
+            </span>
+          </div>
         </div>
       ),
     },

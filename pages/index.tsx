@@ -83,7 +83,9 @@ function Home({
   return (
     <>
       <Head>
-        <title>Faro Beach Club | Espaços Versáteis para Eventos Corporativos</title>
+        <title>
+          Faro Beach Club | Espaços Versáteis para Eventos Corporativos
+        </title>
       </Head>
       <Booking formId={FORM_ID} portalId={PORTAL_ID} phone={PHONE_NUMBER} />
 
@@ -95,7 +97,7 @@ function Home({
         // swiperdata={homeBanner[0]?.images || []}
         anchor={eventContent[0].anchor}
       />
-      <TitleTextSwiper
+      {/* <TitleTextSwiper
         texts={eventContent[1].texts}
         button={eventContent[1].button}
         swiperdata={homeContent[1]?.images || []}
@@ -108,7 +110,7 @@ function Home({
         button={eventContent[2].button}
         swiperdata={homeContent[2]?.images || []}
         anchor={eventContent[2].anchor}
-      />
+      /> */}
 
       <Offering />
 

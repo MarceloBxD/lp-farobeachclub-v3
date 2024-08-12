@@ -90,7 +90,7 @@ const Swiper: React.FC<SwiperProps> = ({
       navigation={true}
       breakpoints={breakpoints}
       style={{
-        width: isMobile ? "100%" : "70%",
+        width: "100%",
         paddingLeft: hasPadding ? pageMargin : 0,
         paddingRight: hasPadding ? pageMargin : 0,
         paddingBottom: childrenArray.length > 1 ? 64 : 0,

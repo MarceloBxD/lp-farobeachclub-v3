@@ -73,8 +73,8 @@ const EventCard: React.FC<ContentProps> = ({
         )}
       </div>
       <Button
-      bannerLink
-        link={link}
+        bannerLink
+        // link={link}
         style={{
           width: "100%",
           marginTop: "10px",

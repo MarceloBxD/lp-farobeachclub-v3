@@ -15,7 +15,7 @@ const DisclosureEvent: React.FC<DisclosureEventProps> = ({ event }) => {
         title={event.title}
         date={event.date}
         description={event.description}
-        // link={event.link}
+        link={event.link}
         banner={event.banner}
         tag={event.tag}
         type={event.type}

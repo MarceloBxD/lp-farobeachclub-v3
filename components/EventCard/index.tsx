@@ -8,6 +8,7 @@ import { weekday } from "@/utils/dateFuncs";
 import { useApp } from "@/context/AppContext";
 
 import CloseIcon from "@/assets/icons/CloseIcon";
+import DataLayer from "@/utils/DataLayer";
 
 const EventCard: React.FC<ContentProps> = ({
   date,
@@ -20,7 +21,7 @@ const EventCard: React.FC<ContentProps> = ({
   disclosure = false,
   bannerCard,
 }) => {
-  const { setModalActive, bookingActive } = useApp();
+  const { setModalActive, bookingActive, setBookingActive } = useApp();
   const [cardBannerActive, setCardBannerActive] = React.useState(true);
 
   const openModal = () => {
@@ -73,15 +74,25 @@ const EventCard: React.FC<ContentProps> = ({
         )}
       </div>
       <Button
+      bannerLink
         link={link}
         style={{
           width: "100%",
           marginTop: "10px",
         }}
+        onClick={() => {
+          DataLayer.clickEvent({
+            element: title,
+            elementCategory: "botao",
+            pageSection: "eventos",
+            pageSubsection: "eventos",
+          });
+          setBookingActive(true);
+        }}
         id="comprar_ingresso_click"
       >
         {bannerCard ? (
-          <b>Saiba Mais!</b>
+          <b>Faça seu orçamento</b>
         ) : (
           <>
             Comprar <b>Ingressos</b>

@@ -5,10 +5,13 @@ export type ContentProps = {
   date: string;
   description: any;
   banner: string;
-  link: string;
+  link?: string;
   fixed?: boolean;
   type: "Midia" | "Programação";
-  category?: "EVENTOS REALIZADOS" | "SHOWS REALIZADOS" | "ASSESSORIA DE IMPRENSA";
+  category?:
+    | "EVENTOS REALIZADOS"
+    | "SHOWS REALIZADOS"
+    | "ASSESSORIA DE IMPRENSA";
   instagram?: string;
   pixieSet?: string;
   disclosure?: boolean;

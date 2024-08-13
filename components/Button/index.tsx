@@ -13,6 +13,7 @@ import DataLayer from "@/utils/DataLayer";
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
+  bannerLink?: boolean;
   variant?:
     | "brand"
     | "brand-white"
@@ -52,6 +53,7 @@ const Button: React.FC<ButtonProps> = ({
   openBooking = false,
   load,
   ref,
+  bannerLink,
   ...props
 }) => {
   const { setBookingActive } = useApp();
@@ -62,7 +64,6 @@ const Button: React.FC<ButtonProps> = ({
     borderColor: button_theme[variant].borderColor,
     config: config.stiff,
   }));
-  
 
   const changeHover = (hover: boolean) => {
     const varia = hover ? button_theme[variant].hover : button_theme[variant];
@@ -82,7 +83,6 @@ const Button: React.FC<ButtonProps> = ({
     changeHover(false);
   };
 
-
   const extractAllTextFromChildren = (children: any): string => {
     let text = "";
     if (typeof children === "string") {
@@ -96,8 +96,7 @@ const Button: React.FC<ButtonProps> = ({
     }
 
     return text;
-  }
-
+  };
 
   const onClick = () => {
     openBooking && setBookingActive(true);
@@ -143,13 +142,13 @@ const Button: React.FC<ButtonProps> = ({
           >
             {children}
           </Description>
-            {icon && <div className={styles.icon}>{icon}</div>}
+          {icon && <div className={styles.icon}>{icon}</div>}
         </>
       )}
     </animated.button>
   );
 
-  if (link)
+  if (link || bannerLink)
     return (
       <a
         href={link}
@@ -162,6 +161,7 @@ const Button: React.FC<ButtonProps> = ({
         {button}
       </a>
     );
+
   return button;
 };
 

@@ -74,7 +74,7 @@ const EventCard: React.FC<ContentProps> = ({
         )}
       </div>
       <Button
-      bannerLink
+        bannerLink
         link={link}
         style={{
           width: "100%",
@@ -92,7 +92,7 @@ const EventCard: React.FC<ContentProps> = ({
         id="comprar_ingresso_click"
       >
         {bannerCard ? (
-          <b>Faça seu orçamento</b>
+          <b>Faça seu orçamento!</b>
         ) : (
           <>
             Comprar <b>Ingressos</b>

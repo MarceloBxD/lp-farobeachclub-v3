@@ -6,7 +6,7 @@ export const MidiaContent = () => {
 
   if (!modalActive) return null;
 
-  const isYoutube = modalActive?.link.includes("youtube");
+  const isYoutube = modalActive?.link?.includes("youtube");
 
   if (isYoutube) {
     return (

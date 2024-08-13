@@ -23,6 +23,7 @@ export interface ButtonProps
     | "terms-button"
     | "whatsapp-button";
   icon?: React.ReactNode;
+  bannerLink?: boolean;
   wrap?: boolean;
   link?: string;
   load?: LoadProps;
@@ -51,6 +52,7 @@ const Button: React.FC<ButtonProps> = ({
   wrap = false,
   link,
   openBooking = false,
+  bannerLink,
   load,
   ref,
   bannerLink,
@@ -152,6 +154,15 @@ const Button: React.FC<ButtonProps> = ({
     return (
       <a
         href={link}
+        onClick={() => {
+          DataLayer.clickEvent({
+            element: extractAllTextFromChildren(children),
+            elementCategory: "botao",
+            pageSection: "booking",
+            pageSubsection: "form",
+          });
+          setBookingActive(true);
+        }}
         target="_blank"
         style={{
           width: "fit-content",

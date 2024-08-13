@@ -50,7 +50,7 @@ export const MidiaCard = ({
     infoSpring.opacity.start(0);
   };
 
-  const brokenLink = link.includes("drive.google");
+  const brokenLink = link?.includes("drive.google");
 
   return (
     <div
@@ -106,7 +106,7 @@ export const MidiaCard = ({
           >
             Ver <b>matéria</b>
           </Button>
-        ) : pixieSet && isVideoUrl(link) ? (
+        ) : pixieSet && isVideoUrl(link ?? "") ? (
           <>
             <Button
               id="btn-midia-card"
@@ -153,7 +153,7 @@ export const MidiaCard = ({
               Ver <b>fotos</b>
             </Button>
           </>
-        ) : isVideoUrl(link) ? (
+        ) : isVideoUrl(link ?? "") ? (
           <Button
             id="btn-midia-card"
             variant="white-black"

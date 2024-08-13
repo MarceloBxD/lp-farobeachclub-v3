@@ -1,17 +1,17 @@
-import React from "react"
-import TitleText, { TitleTextProps } from "../../components/TitleText"
-import styles from "./styles.module.scss"
-import Image, { StaticImageData } from "next/legacy/image"
-import Swiper from "@/components/Swiper"
-import { useApp } from "@/context/AppContext"
+import React from "react";
+import TitleText, { TitleTextProps } from "../../components/TitleText";
+import styles from "./styles.module.scss";
+import Image, { StaticImageData } from "next/legacy/image";
+import Swiper from "@/components/Swiper";
+import { useApp } from "@/context/AppContext";
 
 export interface TitleTextSwiperProps extends TitleTextProps {
-  inverse?: boolean
-  video?: string
+  inverse?: boolean;
+  video?: string;
   swiperdata?: {
-    src: string | StaticImageData
-    alt: string
-  }[]
+    src: string | StaticImageData;
+    alt: string;
+  }[];
 }
 
 const TitleTextSwiper: React.FC<TitleTextSwiperProps> = ({
@@ -25,8 +25,8 @@ const TitleTextSwiper: React.FC<TitleTextSwiperProps> = ({
 }) => {
   const {
     device: { isMobile },
-  } = useApp()
-  const isMuted = true
+  } = useApp();
+  const isMuted = true;
 
   return (
     <div
@@ -99,10 +99,13 @@ const TitleTextSwiper: React.FC<TitleTextSwiperProps> = ({
               />
             </div>
           ))}
+          style={{
+            width: isMobile ? "100%" : "50%",
+          }}
         />
       ) : null}
     </div>
-  )
-}
+  );
+};
 
-export default TitleTextSwiper
+export default TitleTextSwiper;

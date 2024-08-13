@@ -22,6 +22,7 @@ export interface ButtonProps
     | "terms-button"
     | "whatsapp-button";
   icon?: React.ReactNode;
+  bannerLink?: boolean;
   wrap?: boolean;
   link?: string;
   load?: LoadProps;
@@ -50,6 +51,7 @@ const Button: React.FC<ButtonProps> = ({
   wrap = false,
   link,
   openBooking = false,
+  bannerLink,
   load,
   ref,
   ...props
@@ -62,7 +64,6 @@ const Button: React.FC<ButtonProps> = ({
     borderColor: button_theme[variant].borderColor,
     config: config.stiff,
   }));
-  
 
   const changeHover = (hover: boolean) => {
     const varia = hover ? button_theme[variant].hover : button_theme[variant];
@@ -82,7 +83,6 @@ const Button: React.FC<ButtonProps> = ({
     changeHover(false);
   };
 
-
   const extractAllTextFromChildren = (children: any): string => {
     let text = "";
     if (typeof children === "string") {
@@ -96,8 +96,7 @@ const Button: React.FC<ButtonProps> = ({
     }
 
     return text;
-  }
-
+  };
 
   const onClick = () => {
     openBooking && setBookingActive(true);
@@ -143,16 +142,25 @@ const Button: React.FC<ButtonProps> = ({
           >
             {children}
           </Description>
-            {icon && <div className={styles.icon}>{icon}</div>}
+          {icon && <div className={styles.icon}>{icon}</div>}
         </>
       )}
     </animated.button>
   );
 
-  if (link)
+  if (link || bannerLink)
     return (
       <a
         href={link}
+        onClick={() => {
+          DataLayer.clickEvent({
+            element: extractAllTextFromChildren(children),
+            elementCategory: "botao",
+            pageSection: "booking",
+            pageSubsection: "form",
+          });
+          setBookingActive(true);
+        }}
         target="_blank"
         style={{
           width: "fit-content",

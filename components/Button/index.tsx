@@ -13,7 +13,6 @@ import DataLayer from "@/utils/DataLayer";
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  bannerLink?: boolean;
   variant?:
     | "brand"
     | "brand-white"
@@ -55,7 +54,6 @@ const Button: React.FC<ButtonProps> = ({
   bannerLink,
   load,
   ref,
-  bannerLink,
   ...props
 }) => {
   const { setBookingActive } = useApp();

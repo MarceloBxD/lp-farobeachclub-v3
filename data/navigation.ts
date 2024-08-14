@@ -24,7 +24,7 @@ export const navigation: NavigationItem[] = [
   {
     id: 3,
     title: "Serviços",
-    href: "#/servicos",
+    href: "/#servicos",
   },
   {
     id: 4,

@@ -13,6 +13,7 @@ const QuemSomos: React.FC<{ videoUrl: string }> = ({ videoUrl }) => {
   return (
     <>
       <Wrapper
+        anchor="quem-somos"
         style={{
           paddingBottom: 0,
         }}

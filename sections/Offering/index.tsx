@@ -8,7 +8,7 @@ import styles from "./styles.module.scss";
 
 const Offering: React.FC = () => {
   return (
-    <Wrapper contentClass={{ container: styles.wrapper }}>
+    <Wrapper contentClass={{ container: styles.wrapper }} anchor={eventContent[3].anchor}>
       <div className={styles.insideWrapper}>
         <Title>{eventContent[3].texts.title}</Title>
         {eventContent[3].texts.description}

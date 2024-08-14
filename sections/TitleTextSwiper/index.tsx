@@ -27,6 +27,7 @@ const TitleTextSwiper: React.FC<TitleTextSwiperProps> = ({
     device: { isMobile },
   } = useApp();
   const isMuted = true;
+  const isSectionInHome = !!title // if title is empty, it's the section in home
 
   return (
     <div
@@ -55,7 +56,7 @@ const TitleTextSwiper: React.FC<TitleTextSwiperProps> = ({
           description,
           bullets,
         }}
-        centered
+        centered={isSectionInHome}
         hasMidia={!!video || !!swiperdata}
       />
       {video ? (

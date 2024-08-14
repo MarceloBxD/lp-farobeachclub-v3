@@ -23,6 +23,7 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import * as gtag from "@/lib/gtagHelper";
 import Faq from "@/sections/Faq";
+import QuemSomos from "@/sections/QuemSomos";
 
 type HomeProps = {
   homeContent: {
@@ -43,6 +44,7 @@ type HomeProps = {
   PHONE_NUMBER: string;
   MAPS_API_KEY: string;
   midia: ContentProps[];
+  videoUrl: string;
 };
 
 function Home({
@@ -52,6 +54,7 @@ function Home({
   FORM_ID,
   customers,
   PORTAL_ID,
+  videoUrl,
   PHONE_NUMBER,
   midia,
   MAPS_API_KEY,
@@ -135,6 +138,8 @@ function Home({
           return item.category === "ASSESSORIA DE IMPRENSA";
         })}
       /> */}
+
+      <QuemSomos videoUrl={videoUrl} />
 
       <Clientes customers={customers} />
       <Faq faq={faqData} />

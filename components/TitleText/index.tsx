@@ -1,12 +1,12 @@
 import { Button } from "@/components";
 import React from "react";
-import { Text, Title } from "../Texts";
+import { Title } from "../Texts";
 import Link from "next/link";
 import { ButtonProps } from "../Button";
 import styles from "./styles.module.scss";
 export interface TitleTextProps {
   texts: {
-    title: string | JSX.Element;
+    title?: string | JSX.Element;
     description?: string | JSX.Element;
     bullets?: string | JSX.Element;
   };
@@ -60,7 +60,7 @@ const TitleText: React.FC<TitleTextProps> = ({
           hasMidia ? "" : styles.noMidia
         }`}
       >
-        <Title>{title}</Title>
+        {title && <Title>{title}</Title>}
         <div className={styles.descContainer}>
           <div
             style={{
@@ -69,13 +69,15 @@ const TitleText: React.FC<TitleTextProps> = ({
           >
             {!!description && description}
           </div>
-          <div
-            style={{
-              flex: 1,
-            }}
-          >
-            {!!bullets && bullets}
-          </div>
+          {!!bullets && (
+            <div
+              style={{
+                flex: 1,
+              }}
+            >
+              {bullets}
+            </div>
+          )}
         </div>
         {button
           ? Array.isArray(button)

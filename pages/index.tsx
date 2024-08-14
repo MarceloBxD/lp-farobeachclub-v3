@@ -136,8 +136,8 @@ function Home({
         })}
       /> */}
 
-      <Faq faq={faqData} />
       <Clientes customers={customers} />
+      <Faq faq={faqData} />
 
       <Contato phone={PHONE_NUMBER}>
         <MapEl apiKey={MAPS_API_KEY} />

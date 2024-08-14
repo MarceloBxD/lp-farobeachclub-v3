@@ -74,7 +74,7 @@ const TitleText: React.FC<TitleTextProps> = ({
               flex: 1,
             }}
           >
-            {!!bullets && <Text>{bullets}</Text>}
+            {!!bullets && bullets}
           </div>
         </div>
         {button

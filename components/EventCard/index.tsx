@@ -38,6 +38,8 @@ const EventCard: React.FC<ContentProps> = ({
     });
   };
 
+  console.log("bannerCard", bannerCard);
+
   return (
     <div
       id="eventos_click"

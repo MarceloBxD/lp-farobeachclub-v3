@@ -20,10 +20,14 @@ export const eventContent: ContentProps[] = [
             shows inesquecíveis, trazendo artistas renomados do cenário mundial
             para nossos palcos.
           </p>
-          <p>
+          <p
+            style={{
+              marginTop: "1rem",
+            }}
+          >
             Estamos prontos para construir parcerias estratégicas e oferecer a
-            você toda nossa <b>expertise</b> para
-            <br /> transformar o <b>seu evento em uma experiencia de sucesso</b>
+            você toda nossa <b>expertise</b> para transformar o{" "}
+            <b>seu evento em uma experiencia de sucesso</b>
           </p>
         </>
       ),
@@ -38,6 +42,7 @@ export const eventContent: ContentProps[] = [
             maxWidth: "80%",
             margin: "0 auto",
             placeItems: "center",
+            textAlign: "center",
           }}
         >
           <li

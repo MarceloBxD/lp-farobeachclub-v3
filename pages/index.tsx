@@ -104,7 +104,6 @@ function Home({
         anchor={eventContent[1].anchor}
         inverse
       />
-      // novo comentário
 
       <TitleTextSwiper
         texts={eventContent[2].texts}
@@ -129,15 +128,13 @@ function Home({
           return item.category === "SHOWS REALIZADOS";
         })}
       /> */}
-{/* 
+      {/* 
       <Midia
         category="ASSESSORIA DE IMPRENSA"
         content={midia?.filter((item) => {
           return item.category === "ASSESSORIA DE IMPRENSA";
         })}
       /> */}
-
-      
 
       <Faq faq={faqData} />
       <Clientes customers={customers} />

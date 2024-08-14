@@ -8,6 +8,7 @@ export interface TitleTextProps {
   texts: {
     title: string | JSX.Element;
     description?: string | JSX.Element;
+    bullets?: string | JSX.Element;
   };
   anchor?: string;
   button?: ButtonProps | ButtonProps[];
@@ -19,7 +20,7 @@ export interface TitleTextProps {
 
 const TitleText: React.FC<TitleTextProps> = ({
   button,
-  texts: { title, description },
+  texts: { title, description, bullets },
   className,
   style,
   centered = false,
@@ -60,9 +61,22 @@ const TitleText: React.FC<TitleTextProps> = ({
         }`}
       >
         <Title>{title}</Title>
-
-        {!!description && description}
-
+        <div className={styles.descContainer}>
+          <div
+            style={{
+              flex: 1,
+            }}
+          >
+            {!!description && description}
+          </div>
+          <div
+            style={{
+              flex: 1,
+            }}
+          >
+            {!!bullets && <Text>{bullets}</Text>}
+          </div>
+        </div>
         {button
           ? Array.isArray(button)
             ? button.map((item, index) => buttonContent(item, index))

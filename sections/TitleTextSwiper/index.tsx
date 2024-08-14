@@ -18,7 +18,7 @@ const TitleTextSwiper: React.FC<TitleTextSwiperProps> = ({
   button,
   swiperdata,
   inverse,
-  texts: { title, description },
+  texts: { title, description, bullets },
   anchor,
   video,
   ...props
@@ -53,6 +53,7 @@ const TitleTextSwiper: React.FC<TitleTextSwiperProps> = ({
         texts={{
           title,
           description,
+          bullets,
         }}
         centered
         hasMidia={!!video || !!swiperdata}

@@ -25,75 +25,76 @@ export const eventContent: ContentProps[] = [
             você toda nossa <b>expertise</b> para
             <br /> transformar o <b>seu evento em uma experiencia de sucesso</b>
           </p>
-
-          <ul
+        </>
+      ),
+      bullets: (
+        <ul
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            justifyContent: "center",
+            gap: "2rem",
+            width: "100%",
+            maxWidth: "80%",
+            margin: "0 auto",
+            placeItems: "center",
+          }}
+        >
+          <li
             style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-              justifyContent: "center",
-              gap: "1rem",
-              width: "100%",
-              maxWidth: "750px",
-              margin: "0 auto",
-              placeItems: "center",
+              fontWeight: 900,
+              color: "#83A3A1",
+              fontSize: "19px",
             }}
           >
-            <li
-              style={{
-                fontWeight: 900,
-                color: "#83A3A1",
-                fontSize: "19px",
-              }}
-            >
-              <b>Festas de Fim de Ano</b>
-            </li>
-            <li
-              style={{
-                fontWeight: 900,
-                color: "#83A3A1",
-                fontSize: "19px",
-              }}
-            >
-              <b>Shows</b>
-            </li>
-            <li
-              style={{
-                fontWeight: 900,
-                color: "#83A3A1",
-                fontSize: "19px",
-              }}
-            >
-              <b>Eventos Corporativos</b>
-            </li>
-            <li
-              style={{
-                fontWeight: 900,
-                color: "#83A3A1",
-                fontSize: "19px",
-              }}
-            >
-              <b>Formaturas</b>
-            </li>
-            <li
-              style={{
-                fontWeight: 900,
-                color: "#83A3A1",
-                fontSize: "19px",
-              }}
-            >
-              <b>Casamentos</b>
-            </li>
-            <li
-              style={{
-                fontWeight: 900,
-                color: "#83A3A1",
-                fontSize: "19px",
-              }}
-            >
-              <b>Muito Mais!</b>
-            </li>
-          </ul>
-        </>
+            <b>Festas de Fim de Ano</b>
+          </li>
+          <li
+            style={{
+              fontWeight: 900,
+              color: "#83A3A1",
+              fontSize: "19px",
+            }}
+          >
+            <b>Shows</b>
+          </li>
+          <li
+            style={{
+              fontWeight: 900,
+              color: "#83A3A1",
+              fontSize: "19px",
+            }}
+          >
+            <b>Eventos Corporativos</b>
+          </li>
+          <li
+            style={{
+              fontWeight: 900,
+              color: "#83A3A1",
+              fontSize: "19px",
+            }}
+          >
+            <b>Formaturas</b>
+          </li>
+          <li
+            style={{
+              fontWeight: 900,
+              color: "#83A3A1",
+              fontSize: "19px",
+            }}
+          >
+            <b>Casamentos</b>
+          </li>
+          <li
+            style={{
+              fontWeight: 900,
+              color: "#83A3A1",
+              fontSize: "19px",
+            }}
+          >
+            <b>Muito Mais!</b>
+          </li>
+        </ul>
       ),
       title: (
         <div

@@ -107,10 +107,9 @@ export const eventContent: ContentProps[] = [
             textAlign: "center",
             display: "flex",
             flexDirection: "column",
-            gap: "1rem",
+            fontSize: "2.35rem",
           }}
         >
-          <div>
             O Local <br className="desktop" />
             <span
               style={{
@@ -120,8 +119,7 @@ export const eventContent: ContentProps[] = [
             >
               Exclusivo{" "}
             </span>
-            <br />
-            Para Eventos{" "}
+            Para Eventos{' '}
             <span
               style={{
                 fontWeight: 900,
@@ -130,7 +128,6 @@ export const eventContent: ContentProps[] = [
             >
               Inesquecíveis
             </span>
-          </div>
         </div>
       ),
     },

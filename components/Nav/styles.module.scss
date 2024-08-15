@@ -6,6 +6,9 @@
   flex-direction: column;
   gap: 8px;
   width: 100%;
+  @media (max-width: 768px) {
+    width: 100vw;
+  }
 }
 
 .nav_menu {

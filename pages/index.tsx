@@ -113,6 +113,9 @@ function Home({
         button={eventContent[2].button}
         swiperdata={homeContent[2]?.images || []}
         anchor={eventContent[2].anchor}
+        style={{
+          marginTop: '5vh'
+        }}
       />
 
       <Offering />

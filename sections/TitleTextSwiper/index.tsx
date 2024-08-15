@@ -36,7 +36,7 @@ const TitleTextSwiper: React.FC<TitleTextSwiperProps> = ({
       style={{
         flexDirection: inverse ? "row-reverse" : "row",
         height: "fit-content",
-        minHeight: isMobile ? "fit-content" : "650px",
+        minHeight: isMobile ? "fit-content" : "450px",
         alignItems: "center",
         ...props.style,
       }}

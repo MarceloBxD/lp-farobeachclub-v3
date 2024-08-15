@@ -10,98 +10,15 @@ export const eventContent: ContentProps[] = [
       description: (
         <>
           <p>
-            Nos últimos dois anos, estabelecemos conexões memoráveis com mais de
-            150 clientes, proporcionando experiências extraordinárias em{" "}
-            <b>
-              eventos Corporativos, Festas de Fim de Ano, Formaturas,
-              Aniversários, Casamentos, Plenárias
-            </b>{" "}
-            e muito mais. Além disso, orgulhamo-nos de ter realizado mais de 120
-            shows inesquecíveis, trazendo artistas renomados do cenário mundial
-            para nossos palcos.
-          </p>
-          <p
-            style={{
-              marginTop: "1rem",
-            }}
-          >
-            Estamos prontos para construir parcerias estratégicas e oferecer a
-            você toda nossa <b>expertise</b> para transformar o{" "}
-            <b>seu evento em uma experiencia de sucesso</b>
+            Nos últimos dois anos, estabelecemos conexões memoráveis com mais de 150 clientes, proporcionando experiências extraordinárias em eventos Corporativos, Festas de Fim de Ano, Formaturas, Aniversários, Casamentos, Plenárias e muito mais. Além disso, orgulhamo-nos de ter realizado mais de 120 shows inesquecíveis, trazendo artistas renomados do cenário mundial para nossos palcos.
+            <br />
+            <br/>
+Estamos prontos para construir parcerias estratégicas e oferecer a você toda nossa expertise para transformar o seu evento em uma experiencia única
+
           </p>
         </>
       ),
-      bullets: (
-        // <ul
-        //   style={{
-        //     display: "grid",
-        //     gridTemplateColumns: "repeat(3, 1fr)",
-        //     justifyContent: "center",
-        //     gap: "2rem",
-        //     width: "100%",
-        //     maxWidth: "80%",
-        //     margin: "0 auto",
-        //     placeItems: "center",
-        //     textAlign: "center",
-        //   }}
-        // >
-        //   <li
-        //     style={{
-        //       fontWeight: 900,
-        //       color: "#83A3A1",
-        //       fontSize: "19px",
-        //     }}
-        //   >
-        //     <b>Festas de Fim de Ano</b>
-        //   </li>
-        //   <li
-        //     style={{
-        //       fontWeight: 900,
-        //       color: "#83A3A1",
-        //       fontSize: "19px",
-        //     }}
-        //   >
-        //     <b>Shows</b>
-        //   </li>
-        //   <li
-        //     style={{
-        //       fontWeight: 900,
-        //       color: "#83A3A1",
-        //       fontSize: "19px",
-        //     }}
-        //   >
-        //     <b>Eventos Corporativos</b>
-        //   </li>
-        //   <li
-        //     style={{
-        //       fontWeight: 900,
-        //       color: "#83A3A1",
-        //       fontSize: "19px",
-        //     }}
-        //   >
-        //     <b>Formaturas</b>
-        //   </li>
-        //   <li
-        //     style={{
-        //       fontWeight: 900,
-        //       color: "#83A3A1",
-        //       fontSize: "19px",
-        //     }}
-        //   >
-        //     <b>Casamentos</b>
-        //   </li>
-        //   <li
-        //     style={{
-        //       fontWeight: 900,
-        //       color: "#83A3A1",
-        //       fontSize: "19px",
-        //     }}
-        //   >
-        //     <b>Muito Mais!</b>
-        //   </li>
-        // </ul>
-        <></>
-      ),
+     
       title: (
         <div
           style={{

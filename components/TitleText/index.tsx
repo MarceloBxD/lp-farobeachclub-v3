@@ -57,8 +57,9 @@ const TitleText: React.FC<TitleTextProps> = ({
     >
       <div
         className={`${centered ? styles.centered : ""} ${
-          hasMidia ? "" : styles.noMidia
-        }`}
+          hasMidia ? styles.hasMidia : styles.noMidia
+          }
+          `}
       >
         {title && <Title>{title}</Title>}
         <div className={styles.descContainer}>

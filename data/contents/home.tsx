@@ -32,74 +32,75 @@ export const eventContent: ContentProps[] = [
         </>
       ),
       bullets: (
-        <ul
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            justifyContent: "center",
-            gap: "2rem",
-            width: "100%",
-            maxWidth: "80%",
-            margin: "0 auto",
-            placeItems: "center",
-            textAlign: "center",
-          }}
-        >
-          <li
-            style={{
-              fontWeight: 900,
-              color: "#83A3A1",
-              fontSize: "19px",
-            }}
-          >
-            <b>Festas de Fim de Ano</b>
-          </li>
-          <li
-            style={{
-              fontWeight: 900,
-              color: "#83A3A1",
-              fontSize: "19px",
-            }}
-          >
-            <b>Shows</b>
-          </li>
-          <li
-            style={{
-              fontWeight: 900,
-              color: "#83A3A1",
-              fontSize: "19px",
-            }}
-          >
-            <b>Eventos Corporativos</b>
-          </li>
-          <li
-            style={{
-              fontWeight: 900,
-              color: "#83A3A1",
-              fontSize: "19px",
-            }}
-          >
-            <b>Formaturas</b>
-          </li>
-          <li
-            style={{
-              fontWeight: 900,
-              color: "#83A3A1",
-              fontSize: "19px",
-            }}
-          >
-            <b>Casamentos</b>
-          </li>
-          <li
-            style={{
-              fontWeight: 900,
-              color: "#83A3A1",
-              fontSize: "19px",
-            }}
-          >
-            <b>Muito Mais!</b>
-          </li>
-        </ul>
+        // <ul
+        //   style={{
+        //     display: "grid",
+        //     gridTemplateColumns: "repeat(3, 1fr)",
+        //     justifyContent: "center",
+        //     gap: "2rem",
+        //     width: "100%",
+        //     maxWidth: "80%",
+        //     margin: "0 auto",
+        //     placeItems: "center",
+        //     textAlign: "center",
+        //   }}
+        // >
+        //   <li
+        //     style={{
+        //       fontWeight: 900,
+        //       color: "#83A3A1",
+        //       fontSize: "19px",
+        //     }}
+        //   >
+        //     <b>Festas de Fim de Ano</b>
+        //   </li>
+        //   <li
+        //     style={{
+        //       fontWeight: 900,
+        //       color: "#83A3A1",
+        //       fontSize: "19px",
+        //     }}
+        //   >
+        //     <b>Shows</b>
+        //   </li>
+        //   <li
+        //     style={{
+        //       fontWeight: 900,
+        //       color: "#83A3A1",
+        //       fontSize: "19px",
+        //     }}
+        //   >
+        //     <b>Eventos Corporativos</b>
+        //   </li>
+        //   <li
+        //     style={{
+        //       fontWeight: 900,
+        //       color: "#83A3A1",
+        //       fontSize: "19px",
+        //     }}
+        //   >
+        //     <b>Formaturas</b>
+        //   </li>
+        //   <li
+        //     style={{
+        //       fontWeight: 900,
+        //       color: "#83A3A1",
+        //       fontSize: "19px",
+        //     }}
+        //   >
+        //     <b>Casamentos</b>
+        //   </li>
+        //   <li
+        //     style={{
+        //       fontWeight: 900,
+        //       color: "#83A3A1",
+        //       fontSize: "19px",
+        //     }}
+        //   >
+        //     <b>Muito Mais!</b>
+        //   </li>
+        // </ul>
+        <></>
       ),
       title: (
         <div

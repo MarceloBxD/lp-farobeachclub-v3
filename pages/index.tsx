@@ -100,25 +100,6 @@ function Home({
         // swiperdata={homeBanner[0]?.images || []}
         anchor={eventContent[0].anchor}
       />
-      <TitleTextSwiper
-        texts={eventContent[1].texts}
-        button={eventContent[1].button}
-        swiperdata={homeContent[1]?.images || []}
-        anchor={eventContent[1].anchor}
-        inverse
-      />
-
-      <TitleTextSwiper
-        texts={eventContent[2].texts}
-        button={eventContent[2].button}
-        swiperdata={homeContent[2]?.images || []}
-        anchor={eventContent[2].anchor}
-        style={{
-          marginTop: '5vh'
-        }}
-      />
-
-      <Offering />
 
       <Midia
         anchorId="eventos-privados"
@@ -143,6 +124,26 @@ function Home({
       /> */}
 
       <QuemSomos videoUrl={videoUrl} />
+
+      <TitleTextSwiper
+        texts={eventContent[1].texts}
+        button={eventContent[1].button}
+        swiperdata={homeContent[1]?.images || []}
+        anchor={eventContent[1].anchor}
+        inverse
+      />
+
+      <TitleTextSwiper
+        texts={eventContent[2].texts}
+        button={eventContent[2].button}
+        swiperdata={homeContent[2]?.images || []}
+        anchor={eventContent[2].anchor}
+        style={{
+          marginTop: "5vh",
+        }}
+      />
+
+      <Offering />
 
       <Clientes customers={customers} />
       <Faq faq={faqData} />

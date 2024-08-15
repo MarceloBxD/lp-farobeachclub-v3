@@ -1,10 +1,7 @@
-import React, { useEffect, useState } from "react";
-import Subtitle from "../Subtitle";
-import Text from "../Text";
+import React from "react";
 import Wrapper from "../Wrapper";
 import SectionLabel from "../SectionLabel";
-import { useAuth } from "@/context/AuthContext";
-import axios from "axios";
+
 type SubtitleAndTextProps = {
   subtitle: string;
   text: string;

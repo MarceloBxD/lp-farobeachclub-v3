@@ -131,40 +131,6 @@ export const eventContent: ContentProps[] = [
               Inesquecíveis
             </span>
           </div>
-
-          <div
-            style={{
-              fontSize: "1.5rem",
-            }}
-          >
-            <span
-              style={{
-                fontWeight: 900,
-                color: "#83A3A1",
-              }}
-            >
-              Transforme{" "}
-            </span>
-            <br />
-            Seu Evento com o{" "}
-            <span
-              style={{
-                fontWeight: 900,
-                color: "#83A3A1",
-              }}
-            >
-              Charme
-            </span>
-            <br /> do{" "}
-            <span
-              style={{
-                fontWeight: 900,
-                color: "#83A3A1",
-              }}
-            >
-              Faro Beach Club
-            </span>
-          </div>
         </div>
       ),
     },

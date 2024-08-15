@@ -131,6 +131,9 @@ function Home({
         swiperdata={homeContent[1]?.images || []}
         anchor={eventContent[1].anchor}
         inverse
+         style={{
+          marginTop: "5vh",
+        }}
       />
 
       <TitleTextSwiper
@@ -141,6 +144,7 @@ function Home({
         style={{
           marginTop: "5vh",
         }}
+        inverse
       />
 
       <Offering />

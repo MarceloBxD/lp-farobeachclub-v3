@@ -110,13 +110,15 @@ export const eventContent: ContentProps[] = [
             fontSize: "2.35rem",
           }}
         >
+          <p>
+            
             O Local <br className="desktop" />
             <span
               style={{
                 fontWeight: 900,
                 color: "#83A3A1",
               }}
-            >
+              >
               Exclusivo{" "}
             </span>
             Para Eventos{' '}
@@ -125,9 +127,10 @@ export const eventContent: ContentProps[] = [
                 fontWeight: 900,
                 color: "#83A3A1",
               }}
-            >
+              >
               Inesquecíveis
             </span>
+              </p>
         </div>
       ),
     },

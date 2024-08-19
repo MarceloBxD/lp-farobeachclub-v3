@@ -16,7 +16,7 @@ import Load from "../Load";
 import { Tokens } from "@/data/tokens";
 
 interface SwiperProps extends React.HTMLAttributes<HTMLDivElement> {
-  childrenArray?: React.ReactNode[] ;
+  childrenArray?: React.ReactNode[];
   slidesPerView?: number | "auto";
   spaceBetween?: number;
   breakpoints?: {
@@ -29,6 +29,7 @@ interface SwiperProps extends React.HTMLAttributes<HTMLDivElement> {
   style?: React.CSSProperties;
   classes?: "mobile" | "desktop";
   autoplay?: boolean;
+  navigation?: boolean;
 }
 
 const Swiper: React.FC<SwiperProps> = ({
@@ -38,6 +39,7 @@ const Swiper: React.FC<SwiperProps> = ({
   hasPadding,
   spaceBetween,
   autoplay = false,
+  navigation = true,
   style,
   classes,
 }) => {
@@ -81,13 +83,12 @@ const Swiper: React.FC<SwiperProps> = ({
       autoplay={
         autoplay
           ? {
-              delay: 7000,
-              disableOnInteraction: true,
+              delay: 2000,
               pauseOnMouseEnter: true,
             }
           : false
       }
-      navigation={true}
+      navigation={navigation}
       breakpoints={breakpoints}
       style={{
         width: "100%",

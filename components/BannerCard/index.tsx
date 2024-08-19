@@ -9,7 +9,7 @@ import { useApp } from "@/context/AppContext";
 
 import CloseIcon from "@/assets/icons/CloseIcon";
 
-const EventCard: React.FC<ContentProps> = ({
+const BannerCard: React.FC<ContentProps> = ({
   date,
   title,
   description,
@@ -38,7 +38,7 @@ const EventCard: React.FC<ContentProps> = ({
 
   return (
     <div
-      id="eventos_click"
+      id="banner_click"
       style={{
         display: cardBannerActive && !bookingActive ? "flex" : "none",
         flexDirection: "column",
@@ -72,18 +72,18 @@ const EventCard: React.FC<ContentProps> = ({
         )}
       </div>
       <Button
-        link={link}
+        openBooking
         style={{
           width: "100%",
           marginTop: "10px",
           position: "relative",
         }}
-        id="comprar_ingresso_click"
+        id="orçamento_click"
       >
-        Comprar <b>Ingressos</b>
+        <b>Faça seu orçamento!</b>
       </Button>
     </div>
   );
 };
 
-export default EventCard;
+export default BannerCard;

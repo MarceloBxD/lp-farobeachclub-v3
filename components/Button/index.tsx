@@ -22,7 +22,6 @@ export interface ButtonProps
     | "terms-button"
     | "whatsapp-button";
   icon?: React.ReactNode;
-  bannerLink?: boolean;
   wrap?: boolean;
   link?: string;
   load?: LoadProps;
@@ -51,7 +50,6 @@ const Button: React.FC<ButtonProps> = ({
   wrap = false,
   link,
   openBooking = false,
-  bannerLink,
   load,
   ref,
   ...props
@@ -148,7 +146,7 @@ const Button: React.FC<ButtonProps> = ({
     </animated.button>
   );
 
-  if (link || bannerLink)
+  if (link)
     return (
       <a
         href={link}
@@ -159,11 +157,12 @@ const Button: React.FC<ButtonProps> = ({
             pageSection: "booking",
             pageSubsection: "form",
           });
-          setBookingActive(true);
+          if(openBooking)
+            setBookingActive(true);
         }}
         target="_blank"
         style={{
-          width: "fit-content",
+          width: "100%",
           height: "38px",
         }}
       >

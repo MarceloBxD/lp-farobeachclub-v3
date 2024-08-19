@@ -15,7 +15,6 @@ export type ContentProps = {
   instagram?: string;
   pixieSet?: string;
   disclosure?: boolean;
-  bannerCard?: boolean;
 };
 
 export type CustomerProps = {

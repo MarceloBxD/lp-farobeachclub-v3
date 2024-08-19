@@ -24,35 +24,12 @@ const QuemSomos: React.FC<{ videoUrl: string }> = ({ videoUrl }) => {
           margin: "30px auto",
         }}
       >
-        <Title style={{ margin: "-20px auto 24px" }}>Quem Somos</Title>
         <div className={scssStyles([styles.customersContainer])}>
-          <p>
-            O Faro é um espaço exclusivo, projetado com o estilo sofisticado dos
-            Beach Clubs europeus, para ser o cenário perfeito para o seu evento.
-            Aqui, você encontra conforto, segurança, alta gastronomia, acesso à
-            praia e uma vista paradisíaca para o mar!
-            <br />
-            <br />
-            Localizado no coração do <strong>Leblon</strong>, o Faro Beach Club
-            é altamente versátil, ideal para receber eventos{" "}
-            <strong>
-              Corporativos, Aniversários, Festas de Fim de Ano, Formaturas,
-              Casamentos, Festas de 15 anos, plenárias
-            </strong>{" "}
-            e muito mais.
-          </p>
-
-          <p>
-            <strong>
-              Aqui cada evento é tratado de forma única e exclusiva.
-            </strong>
-          </p>
-
           <div>
             <TitleTextSwiper
               className={styles.titleSwiper}
               texts={{
-                description: (
+                title: (
                   <Description
                     style={{
                       fontSize: "1.5rem",
@@ -61,9 +38,35 @@ const QuemSomos: React.FC<{ videoUrl: string }> = ({ videoUrl }) => {
                       textAlign: isMobile ? "center" : "left",
                     }}
                   >
-                    &quot;Transforme Seu Evento com o Charme do Faro Beach
-                    Club&quot;
+                    O Faro Beach Club
                   </Description>
+                ),
+                description: (
+                  <>
+                    <p>
+                      É um espaço exclusivo, projetado com o estilo sofisticado
+                      dos Beach Clubs europeus, para ser o cenário perfeito para
+                      o seu evento. Aqui, você encontra conforto, segurança,
+                      alta gastronomia, acesso à praia e uma vista paradisíaca
+                      para o mar!
+                      <br />
+                      <br />
+                      Localizado no coração do <strong>Leblon</strong>, o Faro
+                      Beach Club é altamente versátil, ideal para receber
+                      eventos{" "}
+                      <strong>
+                        Corporativos, Aniversários, Festas de Fim de Ano,
+                        Formaturas, Casamentos, Festas de 15 anos, plenárias
+                      </strong>{" "}
+                      e muito mais.
+                    </p>
+                    <br />
+                    <p>
+                      Com dois ambientes independetes - o Beach Club e o Rooftop
+                      - estamos preparados para atender qualquer tipo de evento,
+                      sempre com excelência e atenção aos detalhes.
+                    </p>
+                  </>
                 ),
               }}
               style={{

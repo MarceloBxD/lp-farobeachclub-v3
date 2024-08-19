@@ -1,23 +1,23 @@
-import EventCard from "@/components/EventCard"
-import Swiper from "@/components/Swiper"
-import React from "react"
-import styles from "./styles.module.scss"
-import { Wrapper } from "@/components"
-import { Title } from "@/components/Texts"
-import { ContentProps } from "@/types/content"
+import EventCard from "@/components/EventCard";
+import Swiper from "@/components/Swiper";
+import React from "react";
+import styles from "./styles.module.scss";
+import { Wrapper } from "@/components";
+import { Title } from "@/components/Texts";
+import { ContentProps } from "@/types/content";
 
 type ProgramacaoProps = {
-  events: ContentProps[]
-}
+  events: ContentProps[];
+  style?: React.CSSProperties;
+};
 
-function Programacao({ events }: ProgramacaoProps) {
-  
+function Programacao({ events, style }: ProgramacaoProps) {
   const removeDisclosuredEvent = (events: ContentProps[]) => {
-    return events.filter((event) => !event.disclosure)
-  }
-  
+    return events.filter((event) => !event.disclosure);
+  };
+
   return (
-    <div className={styles.wrapper}>
+    <div style={style} className={styles.wrapper}>
       <Wrapper
         anchor="programacao"
         style={{
@@ -44,7 +44,7 @@ function Programacao({ events }: ProgramacaoProps) {
         ))}
       />
     </div>
-  )
+  );
 }
 
-export default Programacao
+export default Programacao;

@@ -190,8 +190,15 @@ export const getStaticProps = async () => {
   const videoHttps = video.replace("http:", "https:");
 
   const treatedHomeBanner = (homeBanner: any) => {
-    const mobileUrls = homeBanner[0].fields.mobile;
-    const desktopUrls = homeBanner[0].fields.desktop;
+    if (!homeBanner[0]?.fields) {
+      return {
+        mobile: [],
+        desktop: [],
+      };
+    }
+
+    const mobileUrls = homeBanner[0]?.fields?.mobile;
+    const desktopUrls = homeBanner[0]?.fields?.desktop;
 
     return {
       mobile: mobileUrls,

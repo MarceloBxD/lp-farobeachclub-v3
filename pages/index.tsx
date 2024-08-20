@@ -24,6 +24,7 @@ import { useEffect } from "react";
 import * as gtag from "@/lib/gtagHelper";
 import Faq from "@/sections/Faq";
 import QuemSomos from "@/sections/QuemSomos";
+import Testimonials from "@/sections/Testimonials";
 
 type HomeProps = {
   homeContent: {
@@ -148,6 +149,8 @@ function Home({
       />
 
       <Offering />
+
+      <Testimonials />
 
       <Clientes customers={customers} />
       <Faq faq={faqData} />

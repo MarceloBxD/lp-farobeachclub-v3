@@ -18,7 +18,7 @@ export const FEEDBACKS_DATA = [
     company: "Evento Amazon",
     companyLogo: "/amazon_logo.webp",
     content:
-      "A festa ontem foi um sucesso total!O pessoal da Black Pen tava super emocionado e amaram a nossa entrega! A Amazon também deu um feedback na mesma linha, super agradeceram a parceria e o empenho de todos na realização do evento. Da nossa parte aqui da OBC, só temos a agradecer!",
+      "A festa ontem foi um sucesso total! O pessoal da Black Pen tava super emocionado e amaram a nossa entrega! A Amazon também deu um feedback na mesma linha, super agradeceram a parceria e o empenho de todos na realização do evento. Da nossa parte aqui da OBC, só temos a agradecer!",
   },
   {
     author: "Renata",

@@ -28,7 +28,7 @@ const QuemSomos: React.FC<{
           display: "flex",
           flexDirection: "column",
           gap: 16,
-          margin: "30px auto",
+          margin: isMobile ? 'auto':"30px auto",
         }}
       >
         <div className={scssStyles([styles.customersContainer])}>
@@ -79,7 +79,7 @@ const QuemSomos: React.FC<{
             }}
             style={{
               marginBottom: 0,
-              marginTop: "5vh",
+              marginTop: isMobile ? 'unset':"5vh",
               minHeight: "fit-content",
             }}
             video={videoUrl}

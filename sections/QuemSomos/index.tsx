@@ -29,20 +29,19 @@ const QuemSomos: React.FC<{ videoUrl: string }> = ({ videoUrl }) => {
             <TitleTextSwiper
               className={styles.titleSwiper}
               texts={{
-                title: (
-                  <Description
+                description: (
+                  <>
+                    <Description
                     style={{
                       fontSize: "1.5rem",
                       lineHeight: "1.5",
                       fontWeight: "600",
-                      textAlign: isMobile ? "center" : "left",
+                        textAlign: isMobile ? "center" : "left",
+                      marginBottom: "1rem",
                     }}
                   >
-                    O Faro Beach Club
+                    O Faro Beach Club,
                   </Description>
-                ),
-                description: (
-                  <>
                     <p>
                       É um espaço exclusivo, projetado com o estilo sofisticado
                       dos Beach Clubs europeus, para ser o cenário perfeito para

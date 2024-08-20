@@ -49,10 +49,10 @@
 
 @media (max-width: 768px) {
   .swiper-button-next {
-    right: 10px !important;
+    right: 20px;
   }
 
   .swiper-button-prev {
-    left: 10px !important;
+    left: 20px;
   }
 }

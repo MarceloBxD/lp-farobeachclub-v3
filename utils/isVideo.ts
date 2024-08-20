@@ -1,4 +1,6 @@
 export const isVideoUrl = (url: string) => {
+  if (!url) return;
+
   if (
     url.includes("youtube") ||
     url.includes("youtu.be") ||

@@ -131,7 +131,7 @@ function Home({
         swiperdata={homeContent[1]?.images || []}
         anchor={eventContent[1].anchor}
         inverse
-         style={{
+        style={{
           marginTop: "5vh",
         }}
       />

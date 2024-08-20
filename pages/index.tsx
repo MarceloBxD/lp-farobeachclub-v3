@@ -97,7 +97,6 @@ function Home({
       <TitleTextSwiper
         texts={eventContent[0].texts}
         button={eventContent[0].button}
-        // swiperdata={homeBanner[0]?.images || []}
         anchor={eventContent[0].anchor}
       />
 
@@ -109,47 +108,16 @@ function Home({
         })}
       />
 
-      {/* <Midia
-        category="SHOWS REALIZADOS"
-        content={midia?.filter((item) => {
-          return item.category === "SHOWS REALIZADOS";
-        })}
-      /> */}
-      {/* 
-      <Midia
-        category="ASSESSORIA DE IMPRENSA"
-        content={midia?.filter((item) => {
-          return item.category === "ASSESSORIA DE IMPRENSA";
-        })}
-      /> */}
-
-      <QuemSomos videoUrl={videoUrl} />
-
-      <TitleTextSwiper
-        texts={eventContent[1].texts}
-        button={eventContent[1].button}
-        swiperdata={homeContent[1]?.images || []}
-        anchor={eventContent[1].anchor}
-        inverse
-        style={{
-          marginTop: "5vh",
-        }}
-      />
-
-      <TitleTextSwiper
-        texts={eventContent[2].texts}
-        button={eventContent[2].button}
-        swiperdata={homeContent[2]?.images || []}
-        anchor={eventContent[2].anchor}
-        style={{
-          marginTop: "5vh",
-        }}
-        inverse
+      <QuemSomos
+        videoUrl={videoUrl}
+        eventContent={eventContent}
+        homeContent={homeContent}
       />
 
       <Offering />
 
       <Clientes customers={customers} />
+
       <Faq faq={faqData} />
 
       <Contato phone={PHONE_NUMBER}>

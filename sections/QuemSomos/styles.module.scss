@@ -11,12 +11,50 @@
   margin: 0 auto;
 
   @media (max-width: 768px) {
-    max-width: 100%;  
+    max-width: 100%;
   }
 }
 
 .spacesContainer {
-  display: grid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10vh;
+  gap: 24px;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 50%;
+    max-height: fit-content;
+
+    .titleText {
+      width: 100%;
+
+      > div {
+        width: 100%;
+
+        ul {
+          min-height: 350px;
+          max-height: 500px;
+          overflow-y: auto;
+          margin-left: unset;
+        }
+      }
+    }
+
+    .imgSwiper {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 45vh;
+    }
+  }
 }
 
 .customerItem {

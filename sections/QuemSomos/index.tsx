@@ -96,12 +96,13 @@ const QuemSomos: React.FC<{
                 bullets: eventContent[1].texts.bullets,
               }}
               hasMidia
+              className={styles.titleText}
             />
             <Swiper
               spaceBetween={0}
               slidesPerView={1}
               autoplay
-              childrenArray={homeContent[2]?.images?.map(
+              childrenArray={homeContent[1]?.images?.map(
                 (data: any, index: number) => (
                   <div key={index} className={styles.imgSwiper}>
                     <Image
@@ -114,7 +115,9 @@ const QuemSomos: React.FC<{
                 )
               )}
               style={{
-                width: isMobile ? "100%" : "50%",
+                paddingLeft: 0,
+                paddingRight: 0,
+
               }}
             />
           </div>
@@ -127,6 +130,7 @@ const QuemSomos: React.FC<{
                 bullets: eventContent[2].texts.bullets,
               }}
               hasMidia
+              className={styles.titleText}
             />
             <Swiper
               spaceBetween={0}
@@ -145,45 +149,13 @@ const QuemSomos: React.FC<{
                 )
               )}
               style={{
-                width: isMobile ? "100%" : "50%",
+                paddingLeft: 0,
+                paddingRight: 0,
+
               }}
             />
           </div>
         </div>
-
-        {/* <div
-          style={{
-            display: isMobile ? "flex" : "grid",
-            flexDirection: isMobile ? "column" : "row",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "2rem",
-            width: "100vw",
-          }}
-        >
-          <TitleTextSwiper
-            texts={eventContent[1].texts}
-            button={eventContent[1].button}
-            swiperdata={homeContent[1]?.images || []}
-            anchor={eventContent[1].anchor}
-            inverse
-            style={{
-              flexDirection: "column",
-              width: isMobile ? "100%" : "unset",
-            }}
-          />
-
-          <TitleTextSwiper
-            texts={eventContent[2].texts}
-            button={eventContent[2].button}
-            swiperdata={homeContent[2]?.images || []}
-            anchor={eventContent[2].anchor}
-            style={{
-              flexDirection: "column",
-              width: isMobile ? "100%" : "unset",
-            }}
-            inverse
-          />
-        </div> */}
       </Wrapper>
     </>
   );

@@ -1,11 +1,9 @@
 .container {
   margin: auto;
   width: 100%;
-  padding-left: 3vw;
 
   @media (max-width: 768px) {
     margin: 0 !important;
-    padding-left: unset;
   }
 
   > div {

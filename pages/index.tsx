@@ -24,6 +24,7 @@ import { useEffect } from "react";
 import * as gtag from "@/lib/gtagHelper";
 import Faq from "@/sections/Faq";
 import QuemSomos from "@/sections/QuemSomos";
+import Headline from "@/sections/Headline";
 
 type HomeProps = {
   homeContent: {
@@ -94,7 +95,7 @@ function Home({
 
       <Banner content={homeBanner} event={getEventDisclosed(events)} />
 
-      <TitleTextSwiper
+      <Headline
         texts={eventContent[0].texts}
         button={eventContent[0].button}
         anchor={eventContent[0].anchor}

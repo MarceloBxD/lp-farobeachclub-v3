@@ -10,15 +10,21 @@ export const eventContent: ContentProps[] = [
       description: (
         <>
           <p>
-            Nos últimos dois anos, estabelecemos conexões memoráveis com mais de 150 clientes, proporcionando experiências extraordinárias em eventos Corporativos, Festas de Fim de Ano, Formaturas, Aniversários, Casamentos, Plenárias e muito mais. Além disso, orgulhamo-nos de ter realizado mais de 120 shows inesquecíveis, trazendo artistas renomados do cenário mundial para nossos palcos.
+            Nos últimos dois anos, estabelecemos conexões memoráveis com mais de
+            150 clientes, proporcionando experiências extraordinárias em eventos
+            Corporativos, Festas de Fim de Ano, Formaturas, Aniversários,
+            Casamentos, Plenárias e muito mais. Além disso, orgulhamo-nos de ter
+            realizado mais de 120 shows inesquecíveis, trazendo artistas
+            renomados do cenário mundial para nossos palcos.
             <br />
-            <br/>
-Estamos prontos para construir parcerias estratégicas e oferecer a você toda nossa expertise para transformar o seu evento em uma experiencia única
-
+            <br />
+            Estamos prontos para construir parcerias estratégicas e oferecer a
+            você toda nossa expertise para transformar o seu evento em uma
+            experiencia única
           </p>
         </>
       ),
-     
+
       title: (
         <div
           style={{
@@ -29,26 +35,25 @@ Estamos prontos para construir parcerias estratégicas e oferecer a você toda n
           }}
         >
           <p>
-            
             O Local <br className="desktop" />
             <span
               style={{
                 fontWeight: 900,
                 color: "#83A3A1",
               }}
-              >
+            >
               Exclusivo{" "}
             </span>
-            Para Eventos{' '}
+            Para Eventos{" "}
             <span
               style={{
                 fontWeight: 900,
                 color: "#83A3A1",
               }}
-              >
+            >
               Inesquecíveis
             </span>
-              </p>
+          </p>
         </div>
       ),
     },

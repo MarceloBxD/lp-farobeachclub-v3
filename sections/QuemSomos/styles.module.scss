@@ -22,6 +22,12 @@
   margin-top: 10vh;
   gap: 24px;
 
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 5vh;
+  }
+
   > div {
     display: flex;
     flex-direction: column;
@@ -30,6 +36,10 @@
     gap: 20px;
     width: 50%;
     max-height: fit-content;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    }
 
     .titleText {
       width: 100%;
@@ -54,6 +64,14 @@
       align-items: center;
       min-height: 45vh;
     }
+
+    .swiper-button-prev {
+      left: 0 !important;
+    }
+
+    .swiper-button-next {
+      right: 0 !important;
+      }
   }
 }
 

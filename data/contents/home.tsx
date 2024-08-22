@@ -142,19 +142,6 @@ export const eventContent: ContentProps[] = [
           </b>
         </>
       ),
-      description: (
-        <p>
-          <b
-            style={{
-              fontSize: "1.1rem",
-            }}
-          >
-            Estamos prontos para construir parcerias estratégicas e oferecer a
-            você toda nossa expertise para auxiliá-lo na produção do seu evento
-            do início ao fim.
-          </b>
-        </p>
-      ),
     },
 
     anchor: "servicos",

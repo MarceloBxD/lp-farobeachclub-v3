@@ -17,7 +17,6 @@ import {
 import { ContentProps, CustomerProps } from "@/types/content";
 import Head from "next/head";
 import { MapEl } from "@/components/Map";
-import Offering from "@/sections/Offering";
 import { cloudinary } from "@/services/useCloudinary";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
@@ -27,7 +26,6 @@ import QuemSomos from "@/sections/QuemSomos";
 import Headline from "@/sections/Headline";
 import Testimonials from "@/sections/Testimonials";
 import Services from "@/sections/Services";
-import FaroMetodology from "@/sections/FaroMetodology";
 
 type HomeProps = {
   homeContent: {
@@ -119,10 +117,6 @@ function Home({
       />
 
       <Services />
-
-      <Offering />
-
-      <FaroMetodology />
 
       <Testimonials />
 

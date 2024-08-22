@@ -23,7 +23,9 @@
   align-items: center;
   justify-content: flex-start;
   width: max-content; /* Garante que o conteúdo tenha a largura correta */
-  animation: infiniteScroll 20s linear infinite; /* Controla a velocidade da animação */
+  animation: infiniteScroll 60s linear infinite; /* Controla a velocidade da animação */
+
+
 }
 
 .customerItem {

@@ -3,6 +3,8 @@
 .swiper-pagination {
   width: 150px !important;
   bottom: 28px !important;
+  bottom: -40px !important;
+
 }
 
 .swiper-pagination-bullet-active {
@@ -23,7 +25,8 @@
   width: 48px !important;
   height: 48px !important;
 
-  bottom: 8px !important;
+    bottom: -64px !important;
+
   top: unset !important;
 }
 
@@ -37,7 +40,7 @@
   width: 48px !important;
   height: 48px !important;
 
-  bottom: 8px !important;
+  bottom: -64px !important;
   top: unset !important;
 
 }

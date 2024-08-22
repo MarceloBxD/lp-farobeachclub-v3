@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/legacy/image";
 import Swiper from "@/components/Swiper";
 import { CustomerProps } from "@/types/content";
+import { Badge } from "@/components/Badge";
 
 type ClientesProps = {
   customers: CustomerProps[];
@@ -11,40 +12,12 @@ const Clientes: React.FC<ClientesProps> = ({ customers }) => {
   if (customers.length < 1) return null;
   return (
     <>
-      {/* <Wrapper
-        style={{
-          paddingBottom: 0,
-        }}
-        contentStyle={{
-          display: "flex",
-          flexDirection: "column",
-          gap: 16,
-          margin: "30px auto",
-        }}
-      >
-        <Title style={{ margin: "-20px auto 24px" }}>Clientes</Title>
-        <div className={scssStyles(["desktop", styles.customersContainer])}>
-          {customers.map((client, index) => (
-            <div className={styles.customerItem} key={index}>
-              <Image
-                style={{
-                  backgroundPosition: "center",
-                  backgroundSize: "cover",
-                  objectFit: "contain",
-                }}
-                alt={client.title}
-                width={120}
-                height={120}
-                src={client.banner}
-              />
-            </div>
-          ))}
-        </div>
-      </Wrapper> */}
+      <Badge text='Marcas que celebraram conosco' color='black' />
+
       <div
         className="mobile"
         style={{
-          marginBottom: "24px",
+          margin: "24px 0",
         }}
       >
         <Swiper

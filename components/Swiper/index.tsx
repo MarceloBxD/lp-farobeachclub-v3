@@ -85,7 +85,6 @@ const Swiper: React.FC<SwiperProps> = ({
       breakpoints={breakpoints}
       style={{
         width: "100%",
-        paddingBottom: childrenArray.length > 1 ? 64 : 0,
         overflowY: "visible",
         ...style,
       }}

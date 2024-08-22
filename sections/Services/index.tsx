@@ -23,7 +23,7 @@ const Services: React.FC<{}> = () => {
       >
         <Title
           style={{
-            margin: "8vh auto",
+            margin: "6vh auto 12vh",
             textAlign: "center",
           }}
         >

@@ -13,9 +13,6 @@ const Services: React.FC<{}> = () => {
     <>
       <Wrapper
         anchor="servicos"
-        style={{
-          paddingBottom: 0,
-        }}
         contentStyle={{
           display: "flex",
           flexDirection: "column",

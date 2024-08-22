@@ -22,13 +22,8 @@ const Testimonials = () => {
           marginBottom: "24px",
         }}
       >
-        <b
-          style={{
-            color: Tokens.colors.brand.beachclub_rooftop,
-          }}
-        >
-          Depoimentos
-        </b>
+        
+          DEPOIMENTOS
       </Title>
       <div
         style={{

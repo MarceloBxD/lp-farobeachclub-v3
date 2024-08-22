@@ -67,6 +67,8 @@ const TitleTextSwiper: React.FC<TitleTextSwiperProps> = ({
             height: "100%",
             overflow: "hidden",
             zIndex: 0,
+            boxShadow: '0 5px 15px rgba(0,0,0,.25)',
+            borderRadius: '10px',
           }}
         >
           <video

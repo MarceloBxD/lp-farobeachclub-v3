@@ -17,11 +17,14 @@ const Headline: React.FC<TitleTextProps> = ({
           <div
             style={{
               flex: 1,
+              placeSelf: "center",
             }}
           >
             Nos últimos dois anos, estabelecemos conexões memoráveis com mais de
             150 clientes, proporcionando experiências extraordinárias em{" "}
-            <strong>
+            <strong style={{
+              fontSize: "1.25rem",
+            }}>
               Eventos Corporativos, Festas de Fim de Ano, Formaturas,
               Aniversários, Casamentos, Plenárias
             </strong>{" "}

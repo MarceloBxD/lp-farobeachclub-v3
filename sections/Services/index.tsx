@@ -13,9 +13,6 @@ const Services: React.FC<{}> = () => {
     <>
       <Wrapper
         anchor="servicos"
-        style={{
-          paddingBottom: 0,
-        }}
         contentStyle={{
           display: "flex",
           flexDirection: "column",
@@ -23,7 +20,7 @@ const Services: React.FC<{}> = () => {
       >
         <Title
           style={{
-            margin: "8vh auto",
+            margin: "6vh auto 12vh",
             textAlign: "center",
           }}
         >

@@ -48,6 +48,7 @@ const Clientes: React.FC<ClientesProps> = ({ customers }) => {
         }}
       >
         <Swiper
+          navigation={false}
           slidesPerView={2}
           style={{
             width: "100%",

@@ -28,6 +28,11 @@ export const navigation: NavigationItem[] = [
   },
   {
     id: 4,
+    title: "Programação",
+    href: "/programacao"
+  },
+  {
+    id: 5,
     title: "Contato",
     href: "/#contato",
   },

@@ -26,6 +26,8 @@ import Faq from "@/sections/Faq";
 import QuemSomos from "@/sections/QuemSomos";
 import Headline from "@/sections/Headline";
 import Testimonials from "@/sections/Testimonials";
+import Services from "@/sections/Services";
+import FaroMetodology from "@/sections/FaroMetodology";
 
 type HomeProps = {
   homeContent: {
@@ -116,7 +118,11 @@ function Home({
         homeContent={homeContent}
       />
 
+      <Services />
+
       <Offering />
+
+      <FaroMetodology />
 
       <Testimonials />
 

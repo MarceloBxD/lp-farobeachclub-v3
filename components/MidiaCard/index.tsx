@@ -19,6 +19,7 @@ export const MidiaCard = ({
   tag,
   title,
   link,
+  type,
   description,
   fixed,
   category,

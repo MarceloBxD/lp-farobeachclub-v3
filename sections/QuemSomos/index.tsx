@@ -99,7 +99,7 @@ const QuemSomos: React.FC<{
             <Swiper
               spaceBetween={0}
               slidesPerView={1}
-              autoplay
+              // autoplay
               childrenArray={homeContent[1]?.images?.map(
                 (data: any, index: number) => (
                   <div key={index} className={styles.imgSwiper}>

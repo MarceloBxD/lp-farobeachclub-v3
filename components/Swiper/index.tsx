@@ -73,7 +73,7 @@ const Swiper: React.FC<SwiperProps> = ({
     <SwiperContainer
       modules={[Pagination, Navigation, Autoplay]}
       slidesPerView={slidesPerView}
-      spaceBetween={spaceBetween ? spaceBetween :20}
+      spaceBetween={spaceBetween ? spaceBetween : 20}
       pagination={{
         clickable: true,
         dynamicBullets: true,
@@ -98,18 +98,20 @@ const Swiper: React.FC<SwiperProps> = ({
         ...style,
       }}
     >
-      {childrenArray.map((child, index) => (
-        <SwiperSlide
-          className={classes}
-          key={index}
-          style={{
-            width: "fit-content",
-            height: "100%",
-          }}
-        >
-          {child}
-        </SwiperSlide>
-      ))}
+      {childrenArray.map((child, index) => {
+        return (
+          <SwiperSlide
+            className={classes}
+            key={index}
+            style={{
+              width: "fit-content",
+              height: "100%",
+            }}
+          >
+            {child}
+          </SwiperSlide>
+        );
+      })}
     </SwiperContainer>
   );
 };

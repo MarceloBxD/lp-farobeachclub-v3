@@ -32,22 +32,24 @@ const Midia: React.FC<MidiaProps> = ({
 }) => {
   if (content === null) return null;
 
-  const cards = content?.map((item, idx) => (
-    <MidiaCard
-      anchorId={anchorId}
-      key={idx}
-      date={item.date}
-      banner={item.banner}
-      tag={item.tag}
-      title={item.title}
-      link={item.link}
-      description={item.description}
-      fixed={item.fixed}
-      type={item.type}
-      category={item.category}
-      pixieSet={item.pixieSet}
-    />
-  ));
+  const cards = content?.map((item, idx) => {
+    return (
+      <MidiaCard
+        anchorId={anchorId}
+        key={idx}
+        date={item.date}
+        banner={item.banner}
+        tag={item.tag}
+        title={item.title}
+        link={item.link}
+        description={item.description}
+        fixed={item.fixed}
+        type={item.type}
+        category={item.category}
+        pixieSet={item.pixieSet}
+      />
+    );
+  });
 
   return (
     <div className={styles.container} style={style}>

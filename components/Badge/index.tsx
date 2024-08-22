@@ -6,12 +6,17 @@ export interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
   borderColor?: string;
 }
 
+// Texto para trocar Eventos realizados por que vem do Contentful e não quebrar o padrão
+const BADGE_TEXT_IF_EVENTOS_REALIZADOS = "Transformando Sonhos em Realidade";
+
 export const Badge: React.FC<BadgeProps> = ({
   text,
   color = "#fff",
   borderColor = "#fff",
   ...props
 }) => {
+  console.log(text);
+
   return (
     <div
       id="badge"
@@ -29,7 +34,10 @@ export const Badge: React.FC<BadgeProps> = ({
           textTransform: "uppercase",
         }}
       >
-        {text}
+        {/* Fazendo validação por que o texto está vindo do Eventos Realizados */}
+        {text === "EVENTOS REALIZADOS"
+          ? BADGE_TEXT_IF_EVENTOS_REALIZADOS
+          : text}
       </Caption>
     </div>
   );

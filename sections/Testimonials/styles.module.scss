@@ -5,11 +5,36 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px;
   gap: 20px;
   box-shadow: 3px 6px 20px rgba(0, 0, 0, 0.1);
   margin: 10px 0;
   border-radius: 10px;
+  overflow: hidden;
+  padding: 15px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 0;
+    background-color: #333;
+    opacity: 0.1;
+    border-radius: 10px;
+  }
+
+  &:hover {
+    &::after {
+      height: 100%;
+      transition: height 0.3s;
+    }
+    .divider {
+      width: 80%;
+      height: 3px;
+      background-color: #bbb;
+      transition: width 0.3s;
+    }
+  }
 
   @media (max-width: 768px) {
     box-shadow: unset;

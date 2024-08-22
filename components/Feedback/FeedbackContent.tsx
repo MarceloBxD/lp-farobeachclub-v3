@@ -10,17 +10,19 @@ export function FeedbackContent({ text }: FeedbackContentProps) {
   } = useApp();
 
   return (
-    <Description
-      style={{
-        textAlign: "center",
-        maxWidth: "550px",
-        width: "100%",
-        minHeight: isMobile ? "0" : "200px",
-        color: "#555",
-        fontWeight: 500,
-      }}
-    >
-      &quot;{text}&quot;
-    </Description>
+    <>
+      <Description
+        style={{
+          textAlign: "center",
+          maxWidth: "550px",
+          width: "100%",
+          minHeight: isMobile ? "0" : "200px",
+          color: "#555",
+          fontWeight: 500,
+        }}
+      >
+        &quot;{text}&quot;
+      </Description>
+    </>
   );
 }

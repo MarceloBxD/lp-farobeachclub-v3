@@ -22,8 +22,7 @@ const Testimonials = () => {
           marginBottom: "24px",
         }}
       >
-        
-          DEPOIMENTOS
+        DEPOIMENTOS
       </Title>
       <div
         style={{
@@ -35,10 +34,8 @@ const Testimonials = () => {
       >
         {FEEDBACKS_DATA.map((feedback, index) => (
           <div className={styles.feedbackCard} key={index}>
-            <div className={styles.upperCard}>
-              <Feedback.Content text={feedback.content} />
-              {/* <Feedback.Image imageUrl={feedback.companyLogo} /> */}
-            </div>
+            <Feedback.Image imageUrl={feedback.companyLogo} />
+            <Feedback.Content text={feedback.content} />
             <div className={styles.divider} />
             <div className={styles.authorData}>
               <Title

@@ -86,7 +86,7 @@ const Midia: React.FC<MidiaProps> = ({
         </div>
       )}
       {hasSwiper ? (
-        <Swiper hasPadding childrenArray={cards} />
+        <Swiper childrenArray={cards} />
       ) : (
         <div className={styles.cardList}>{cards}</div>
       )}

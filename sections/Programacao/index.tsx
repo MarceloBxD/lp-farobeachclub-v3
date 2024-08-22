@@ -1,7 +1,6 @@
 import EventCard from "@/components/EventCard";
 import Swiper from "@/components/Swiper";
 import React from "react";
-import styles from "./styles.module.scss";
 import { Wrapper } from "@/components";
 import { Title } from "@/components/Texts";
 import { ContentProps } from "@/types/content";

@@ -46,6 +46,7 @@ const EventCard: React.FC<ContentProps> = ({
       style={{
         display: cardBannerActive && !bookingActive ? "flex" : "none",
         flexDirection: "column",
+        gap: 12
       }}
     >
       <div className={styles.card} onClick={openModal}>
@@ -80,7 +81,6 @@ const EventCard: React.FC<ContentProps> = ({
         link={link}
         style={{
           width: "100%",
-          marginTop: "10px",
         }}
         onClick={() => {
           DataLayer.clickEvent({

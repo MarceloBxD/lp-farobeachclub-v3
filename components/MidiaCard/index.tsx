@@ -204,9 +204,10 @@ export const MidiaCard = ({
           marginTop: 12,
           textAlign: "center",
         }}
+        className={styles.title}
       >
         {date && <span>{dateFormatted} - </span>}
-        {title}
+        <Badge text={title} color='black' family="Montserrat" className={styles.title} />
       </Subtitle>
     </>
   );

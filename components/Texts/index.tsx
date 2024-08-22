@@ -51,7 +51,7 @@ export const Subtitle = ({
   return (
     <h2
       {...props}
-      className={`${styles.subtitle}`}
+      className={`${styles.subtitle} ${props.className}`}
       style={{
         fontWeight: weight,
         color: color,

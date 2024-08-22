@@ -19,14 +19,27 @@ const Headline: React.FC<TitleTextProps> = ({
               flex: 1,
             }}
           >
-            {!!description && description}
+            Nos últimos dois anos, estabelecemos conexões memoráveis com mais de
+            150 clientes, proporcionando experiências extraordinárias em{" "}
+            <strong>
+              Eventos Corporativos, Festas de Fim de Ano, Formaturas,
+              Aniversários, Casamentos, Plenárias
+            </strong>{" "}
+            e muito mais.
           </div>
           <div
             style={{
               flex: 1,
             }}
           >
-            {!!description && description}
+            Além disso, orgulhamo-nos de ter realizado mais de{" "}
+            <strong>120 shows inesquecíveis</strong>, trazendo artistas
+            renomados do cenário mundial para nossos palcos.
+            <br />
+            <br />
+            Estamos prontos para construir parcerias estratégicas e oferecer a
+            você toda nossa <strong>expertise</strong> para transformar o{" "}
+            <strong>seu evento em uma experiencia única</strong>
           </div>
         </div>
       </div>

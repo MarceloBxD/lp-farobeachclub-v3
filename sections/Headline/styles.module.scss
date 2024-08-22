@@ -25,7 +25,8 @@
   .descContainer {
     display: flex;
     gap: 2rem;
-    width: 80%;
+    width: 100%;
+    max-width: 1200px;
     margin: auto;
 
     @media (max-width: 1375px) {

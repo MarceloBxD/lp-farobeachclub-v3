@@ -17,18 +17,16 @@ function Programacao({ events, style }: ProgramacaoProps) {
   };
 
   return (
-    <div style={style} className={styles.wrapper}>
-      <Wrapper
-        anchor="programacao"
-        style={{
-          paddingTop: 0,
-          paddingBottom: 0,
-        }}
-      >
-        <Title>Programação</Title>
-      </Wrapper>
+    <Wrapper
+      anchor="programacao"
+      contentStyle={{
+        gap: 32,
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
+      <Title>Programação</Title>
       <Swiper
-        hasPadding
         childrenArray={removeDisclosuredEvent(events)?.map((event, index) => (
           <EventCard
             title={event.title}
@@ -43,7 +41,7 @@ function Programacao({ events, style }: ProgramacaoProps) {
           />
         ))}
       />
-    </div>
+    </Wrapper>
   );
 }
 

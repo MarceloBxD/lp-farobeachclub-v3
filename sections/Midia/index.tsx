@@ -52,56 +52,45 @@ const Midia: React.FC<MidiaProps> = ({
   });
 
   return (
-    <div className={styles.container} style={style}>
-      <Wrapper
-        style={{
-          paddingTop: 0,
-          paddingBottom: 0,
-        }}
-        contentStyle={{
-          display: "flex",
-          flexDirection: "column",
-          gap: 16,
-        }}
-      >
-        {header?.title && <Title>{header?.title}</Title>}
-        {header?.description && (
-          <Description>{header?.description}</Description>
-        )}
-        {category ? (
-          <div className={styles.badgeText}>
-            <Badge text={category} color="#000" borderColor="transparent" />
-          </div>
-        ) : (
-          <div className={styles.badgeText}>
-            {[
-              "EVENTOS REALIZADOS",
-              "SHOWS REALIZADOS",
-              "ASSESSORIA DE IMPRENSA",
-            ].map((item, idx) => (
-              <Badge
-                text={item}
-                key={idx}
-                color="#000"
-                borderColor="transparent"
-              />
-            ))}
-          </div>
-        )}
-      </Wrapper>
+    <Wrapper
+      style={{
+        paddingTop: 0,
+        paddingBottom: 0,
+      }}
+      contentStyle={{
+        display: "flex",
+        flexDirection: "column",
+        gap: 16,
+      }}
+    >
+      {header?.title && <Title>{header?.title}</Title>}
+      {header?.description && <Description>{header?.description}</Description>}
+      {category ? (
+        <div className={styles.badgeText}>
+          <Badge text={category} color="#000" borderColor="transparent" />
+        </div>
+      ) : (
+        <div className={styles.badgeText}>
+          {[
+            "EVENTOS REALIZADOS",
+            "SHOWS REALIZADOS",
+            "ASSESSORIA DE IMPRENSA",
+          ].map((item, idx) => (
+            <Badge
+              text={item}
+              key={idx}
+              color="#000"
+              borderColor="transparent"
+            />
+          ))}
+        </div>
+      )}
       {hasSwiper ? (
         <Swiper hasPadding childrenArray={cards} />
       ) : (
-        <Wrapper
-          style={{
-            paddingTop: 0,
-            paddingBottom: 0,
-          }}
-        >
-          <div className={styles.cardList}>{cards}</div>
-        </Wrapper>
+        <div className={styles.cardList}>{cards}</div>
       )}
-    </div>
+    </Wrapper>
   );
 };
 

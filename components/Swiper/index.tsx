@@ -25,7 +25,6 @@ interface SwiperProps extends React.HTMLAttributes<HTMLDivElement> {
       spaceBetween: number;
     };
   };
-  hasPadding?: boolean;
   style?: React.CSSProperties;
   classes?: "mobile" | "desktop";
   autoplay?: boolean;
@@ -36,7 +35,6 @@ const Swiper: React.FC<SwiperProps> = ({
   childrenArray,
   slidesPerView = "auto",
   breakpoints,
-  hasPadding,
   spaceBetween,
   autoplay = false,
   navigation = true,
@@ -44,10 +42,6 @@ const Swiper: React.FC<SwiperProps> = ({
   classes,
 }) => {
   const [isLoading, setIsLoading] = React.useState(true);
-  const {
-    pageMargin,
-    device: { isMobile },
-  } = useApp();
 
   React.useEffect(() => {
     const timeout = setTimeout(() => {
@@ -91,8 +85,6 @@ const Swiper: React.FC<SwiperProps> = ({
       breakpoints={breakpoints}
       style={{
         width: "100%",
-        paddingLeft: 20,
-        paddingRight: 20,
         paddingBottom: childrenArray.length > 1 ? 64 : 0,
         overflowY: "visible",
         ...style,

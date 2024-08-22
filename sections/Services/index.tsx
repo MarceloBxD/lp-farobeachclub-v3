@@ -48,7 +48,7 @@ const Services: React.FC<{}> = () => {
           <div>
             <TitleText
               texts={{
-                title: "O que oferecemos:",
+                title: (<small>O que oferecemos:</small>),
                 bullets: (
                   <>
                     <p>• Serviço de A&B: Buffet de alta gastronomia.</p>
@@ -69,7 +69,7 @@ const Services: React.FC<{}> = () => {
           <div className={styles.spaceContent}>
             <TitleText
               texts={{
-                title: "Metodologia Faro:",
+                title: (<small>Metodologia Faro:</small>),
                 bullets: (
                   <ol>
                     <li>

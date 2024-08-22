@@ -40,6 +40,7 @@ const Swiper: React.FC<SwiperProps> = ({
   navigation = true,
   style,
   classes,
+  ...props
 }) => {
   const [isLoading, setIsLoading] = React.useState(true);
 
@@ -88,6 +89,7 @@ const Swiper: React.FC<SwiperProps> = ({
         overflowY: "visible",
         ...style,
       }}
+      className={props.className}
     >
       {childrenArray.map((child, index) => {
         return (

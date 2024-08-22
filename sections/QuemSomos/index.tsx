@@ -27,7 +27,6 @@ const QuemSomos: React.FC<{
         contentStyle={{
           display: "flex",
           flexDirection: "column",
-          gap: 16,
         }}
       >
         <div className={scssStyles([styles.customersContainer])}>
@@ -99,6 +98,8 @@ const QuemSomos: React.FC<{
             <Swiper
               spaceBetween={0}
               slidesPerView={1}
+              className={styles.swiper}
+
               // autoplay
               childrenArray={homeContent[1]?.images?.map(
                 (data: any, index: number) => (
@@ -112,11 +113,6 @@ const QuemSomos: React.FC<{
                   </div>
                 )
               )}
-              style={{
-                paddingLeft: 0,
-                paddingRight: 0,
-
-              }}
             />
           </div>
           <div className={styles.spaceContent}>
@@ -133,7 +129,8 @@ const QuemSomos: React.FC<{
             <Swiper
               spaceBetween={0}
               slidesPerView={1}
-              autoplay
+              // autoplay
+              className={styles.swiper}
               childrenArray={homeContent[2]?.images.map(
                 (data: any, index: number) => (
                   <div key={index} className={styles.imgSwiper}>
@@ -146,11 +143,6 @@ const QuemSomos: React.FC<{
                   </div>
                 )
               )}
-              style={{
-                paddingLeft: 0,
-                paddingRight: 0,
-
-              }}
             />
           </div>
         </div>

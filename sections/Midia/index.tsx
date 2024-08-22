@@ -53,10 +53,6 @@ const Midia: React.FC<MidiaProps> = ({
 
   return (
     <Wrapper
-      style={{
-        paddingTop: 0,
-        paddingBottom: 0,
-      }}
       contentStyle={{
         display: "flex",
         flexDirection: "column",
@@ -86,7 +82,7 @@ const Midia: React.FC<MidiaProps> = ({
         </div>
       )}
       {hasSwiper ? (
-        <Swiper childrenArray={cards} />
+        <Swiper childrenArray={cards} className={styles.container} />
       ) : (
         <div className={styles.cardList}>{cards}</div>
       )}

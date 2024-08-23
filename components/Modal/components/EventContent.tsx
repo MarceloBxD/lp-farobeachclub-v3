@@ -1,16 +1,16 @@
-import React from "react"
-import styles from "../styles.module.scss"
-import Image from "next/legacy/image"
-import { useApp } from "@/context/AppContext"
-import { Description, Title } from "@/components/Texts"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
-import { markdownOptions } from "@/utils/markdownOptions"
-import Button from "@/components/Button"
+import React from "react";
+import styles from "../styles.module.scss";
+import Image from "next/legacy/image";
+import { useApp } from "@/context/AppContext";
+import { Description, Title } from "@/components/Texts";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { markdownOptions } from "@/utils/markdownOptions";
+import Button from "@/components/Button";
 
 const EventContent: React.FC = () => {
-  const { modalActive } = useApp()
+  const { modalActive } = useApp();
 
-  if (!modalActive) return null
+  if (!modalActive) return null;
 
   return (
     <div className={styles.eventContent}>
@@ -40,19 +40,21 @@ const EventContent: React.FC = () => {
             )}
           </Description>
         </div>
-        <div>
-          <Button eventBanner link={modalActive.link} id="comprar_ingresso_click">
-            Comprar <b>ingressos</b>
-          </Button>
-          {modalActive.instagram && (
-            <Button variant="brand-white" link={modalActive.instagram}>
-              Ver no instagram do evento
+          
+          <div className={styles.buttons}>
+            <Button link={modalActive.link} id="comprar_ingresso_click">
+              Comprar <b>ingressos</b>
             </Button>
+            {modalActive.instagram && (
+              <Button variant="brand-white" link={modalActive.instagram}>
+                Ver no instagram do evento
+              </Button>
           )}
-        </div>
+          
+          </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default EventContent
+export default EventContent;

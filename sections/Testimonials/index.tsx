@@ -48,7 +48,7 @@ const Testimonials = () => {
               <Description
                 style={{
                   fontStyle: "italic",
-                  color: "#e29696",
+                  color: "#aaa",
                 }}
               >
                 {feedback.company}

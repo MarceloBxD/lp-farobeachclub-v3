@@ -103,7 +103,7 @@ function Home({
       />
 
       <Midia
-        anchorId="eventos-privados"
+        anchorId="eventos"
         category="EVENTOS REALIZADOS"
         content={midia?.filter((item) => {
           return item.category === "EVENTOS REALIZADOS";

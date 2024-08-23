@@ -26,7 +26,10 @@ export const MidiaCard = ({
   pixieSet,
   anchorId,
 }: ContentProps) => {
-  const { setModalActive } = useApp();
+  const {
+    setModalActive,
+    device: { isMobile },
+  } = useApp();
   const dateFormatted =
     date &&
     new Date(date).toLocaleDateString("pt-BR", {
@@ -55,6 +58,23 @@ export const MidiaCard = ({
 
   return (
     <>
+      {isMobile && (
+        <Subtitle
+          style={{
+            marginBottom: 12,
+            textAlign: "center",
+          }}
+          className={styles.title}
+        >
+          {date && <span>{dateFormatted} - </span>}
+          <Badge
+            text={title}
+            color="black"
+            family="Montserrat"
+            className={styles.title}
+          />
+        </Subtitle>
+      )}
       <div
         id={anchorId}
         className={styles.card}
@@ -199,16 +219,23 @@ export const MidiaCard = ({
           )}
         </div>
       </div>
-      <Subtitle
-        style={{
-          marginTop: 12,
-          textAlign: "center",
-        }}
-        className={styles.title}
-      >
-        {date && <span>{dateFormatted} - </span>}
-        <Badge text={title} color='black' family="Montserrat" className={styles.title} />
-      </Subtitle>
+      {!isMobile && (
+        <Subtitle
+          style={{
+            marginTop: 12,
+            textAlign: "center",
+          }}
+          className={styles.title}
+        >
+          {date && <span>{dateFormatted} - </span>}
+          <Badge
+            text={title}
+            color="black"
+            family="Montserrat"
+            className={styles.title}
+          />
+        </Subtitle>
+      )}
     </>
   );
 };

@@ -23,6 +23,7 @@ const QuemSomos: React.FC<{
         anchor="quem-somos"
         style={{
           paddingBottom: 0,
+          marginTop: isMobile ? "5vh" : 0,
         }}
         contentStyle={{
           display: "flex",

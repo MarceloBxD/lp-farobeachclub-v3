@@ -49,11 +49,23 @@
 
 
 @media (max-width: 768px) {
+
+  .swiper-pagination {
+      bottom: -38px !important;
+
+  }
+
+
   .swiper-button-next {
     right: 20px;
+  bottom: -56px !important;
+
   }
 
   .swiper-button-prev {
     left: 20px;
+   bottom: -56px !important;
+
+
   }
 }

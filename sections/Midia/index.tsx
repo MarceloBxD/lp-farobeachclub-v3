@@ -22,7 +22,7 @@ interface MidiaProps {
   anchorId?: string;
 }
 
-const Midia: React.FC<MidiaProps> = ({
+const  Midia: React.FC<MidiaProps> = ({
   category,
   hasSwiper = true,
   header,

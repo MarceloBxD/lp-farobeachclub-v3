@@ -8,6 +8,10 @@
   padding: 5vh 0;
   overflow: hidden;
   margin-bottom: 5vh;
+  
+  @media (max-width: 768px) {
+   margin-top: 5vh;
+  }
 }
 
 .customersContainer {

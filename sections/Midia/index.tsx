@@ -82,7 +82,7 @@ const Midia: React.FC<MidiaProps> = ({
         </div>
       )}
       {hasSwiper ? (
-        <Swiper childrenArray={cards} className={styles.container} />
+        <Swiper childrenArray={cards} className={styles.container} spaceBetween={20} />
       ) : (
         <div className={styles.cardList}>{cards}</div>
       )}

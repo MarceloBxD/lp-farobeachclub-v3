@@ -16,14 +16,14 @@ const Testimonials = () => {
 
   return (
     <Wrapper>
-      <Title
+      <Subtitle
         style={{
           textAlign: isMobile ? "center" : "left",
           marginBottom: "24px",
         }}
       >
         DEPOIMENTOS
-      </Title>
+      </Subtitle>
       <div
         style={{
           display: "flex",

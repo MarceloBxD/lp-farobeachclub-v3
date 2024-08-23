@@ -58,23 +58,6 @@ export const MidiaCard = ({
 
   return (
     <>
-      {isMobile && (
-        <Subtitle
-          style={{
-            marginBottom: 12,
-            textAlign: "center",
-          }}
-          className={styles.title}
-        >
-          {date && <span>{dateFormatted} - </span>}
-          <Badge
-            text={title}
-            color="black"
-            family="Montserrat"
-            className={styles.title}
-          />
-        </Subtitle>
-      )}
       <div
         id={anchorId}
         className={styles.card}
@@ -219,23 +202,21 @@ export const MidiaCard = ({
           )}
         </div>
       </div>
-      {!isMobile && (
-        <Subtitle
-          style={{
-            marginTop: 12,
-            textAlign: "center",
-          }}
+      <Subtitle
+        style={{
+          marginTop: 12,
+          textAlign: "center",
+        }}
+        className={styles.title}
+      >
+        {date && <span>{dateFormatted} - </span>}
+        <Badge
+          text={title}
+          color="black"
+          family="Montserrat"
           className={styles.title}
-        >
-          {date && <span>{dateFormatted} - </span>}
-          <Badge
-            text={title}
-            color="black"
-            family="Montserrat"
-            className={styles.title}
-          />
-        </Subtitle>
-      )}
+        />
+      </Subtitle>
     </>
   );
 };

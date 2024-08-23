@@ -26,6 +26,7 @@ function Programacao({ events, style }: ProgramacaoProps) {
     >
       <Title>Programação</Title>
       <Swiper
+        spaceBetween={20}
         childrenArray={removeDisclosuredEvent(events)?.map((event, index) => (
           <EventCard
             title={event.title}

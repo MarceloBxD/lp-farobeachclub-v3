@@ -29,10 +29,11 @@ export const Badge: React.FC<BadgeProps> = ({
     >
       <Caption
         family={family}
-        wrap={false}
+        wrap={true}
         style={{
-          color,
           textTransform: "uppercase",
+          textAlign: "center",
+          color,
         }}
       >
         {/* Fazendo validação por que o texto está vindo do Eventos Realizados */}

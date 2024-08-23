@@ -42,7 +42,7 @@ const EventContent: React.FC = () => {
         </div>
           
           <div className={styles.buttons}>
-            <Button link={modalActive.link} id="comprar_ingresso_click">
+            <Button openBooking={false} eventBanner link={modalActive.link} id="comprar_ingresso_click">
               Comprar <b>ingressos</b>
             </Button>
             {modalActive.instagram && (

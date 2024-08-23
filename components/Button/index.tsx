@@ -101,6 +101,7 @@ const Button: React.FC<ButtonProps> = ({
   };
 
   const onClick = () => {
+    console.log("openBooking", openBooking);
     openBooking && setBookingActive(true);
     props.onClick && props.onClick();
 

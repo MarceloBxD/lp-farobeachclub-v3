@@ -21,7 +21,7 @@ interface SwiperProps extends React.HTMLAttributes<HTMLDivElement> {
   spaceBetween?: number;
   breakpoints?: {
     [key: string]: {
-      slidesPerView: number;
+      slidesPerView: number | "auto";
       spaceBetween: number;
     };
   };
@@ -42,6 +42,9 @@ const Swiper: React.FC<SwiperProps> = ({
   classes,
   ...props
 }) => {
+  const {
+    device: { isMobile },
+  } = useApp();
   const [isLoading, setIsLoading] = React.useState(true);
 
   React.useEffect(() => {
@@ -74,6 +77,7 @@ const Swiper: React.FC<SwiperProps> = ({
         dynamicBullets: true,
         dynamicMainBullets: 3,
       }}
+      centeredSlides={isMobile}
       autoplay={
         autoplay
           ? {

@@ -12,6 +12,7 @@ import { Caption } from "../Texts";
 import NavItem from "./components/NavItem";
 import Hamburguer from "./components/Hamburguer";
 import DataLayer from "@/utils/DataLayer";
+import { is } from "cypress/types/bluebird";
 
 const Nav: React.FC = () => {
   const [menuActive, setMenuActive] = useState(false);
@@ -19,7 +20,7 @@ const Nav: React.FC = () => {
     setBookingActive,
     bookingActive,
     device: { isMobile },
-    modalActive
+    modalActive,
   } = useApp();
   const pathname = usePathname();
 
@@ -52,8 +53,8 @@ const Nav: React.FC = () => {
     },
     to: {
       opacity: bookingActive || modalActive ? 0 : 1,
-      y: bookingActive || modalActive  ? -24 : 0,
-      maxHeight: bookingActive || modalActive  ? 0 : 1000,
+      y: bookingActive || modalActive ? -24 : 0,
+      maxHeight: bookingActive || modalActive ? 0 : 1000,
     },
   });
 
@@ -64,7 +65,7 @@ const Nav: React.FC = () => {
         <animated.div className={styles.nav_menu} style={{ ...navStyles }}>
           <div className={`mobile ${styles.btns}`}>
             <Hamburguer onClick={() => setMenuActive(!menuActive)} />
-            <Caption wrap={false} color="white">
+            <Caption navCaption wrap={false} color="white">
               {pathnameTitle}
             </Caption>
           </div>
@@ -83,8 +84,8 @@ const Nav: React.FC = () => {
             variant="brand-black"
             wrap={isMobile}
             onClick={() => {
-              setBookingActive(true)
-              DataLayer.clickEvent({ 
+              setBookingActive(true);
+              DataLayer.clickEvent({
                 element: "orcamento_click",
                 elementCategory: "botao",
                 pageSection: "nav",

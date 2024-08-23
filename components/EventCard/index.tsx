@@ -9,6 +9,7 @@ import { useApp } from "@/context/AppContext";
 
 import CloseIcon from "@/assets/icons/CloseIcon";
 import DataLayer from "@/utils/DataLayer";
+import { usePathname } from "next/navigation";
 
 const EventCard: React.FC<ContentProps> = ({
   date,
@@ -24,6 +25,10 @@ const EventCard: React.FC<ContentProps> = ({
   const { setModalActive, bookingActive, setBookingActive } = useApp();
   const [cardBannerActive, setCardBannerActive] = React.useState(true);
 
+  const pathname = usePathname();
+
+  console.log(pathname);
+
   const openModal = () => {
     if (disclosure) return;
     setModalActive({
@@ -38,14 +43,13 @@ const EventCard: React.FC<ContentProps> = ({
     });
   };
 
-
   return (
     <div
       id="eventos_click"
       style={{
         display: cardBannerActive && !bookingActive ? "flex" : "none",
         flexDirection: "column",
-        gap: 12
+        gap: 12,
       }}
       className={styles.card_wrapper}
     >

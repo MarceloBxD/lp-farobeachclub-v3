@@ -40,7 +40,7 @@ const Services: React.FC<{}> = () => {
       >
         <Title
           style={{
-            margin: "6vh auto 12vh",
+            margin: isMobile ? '6vh auto' :"6vh auto 12vh",
             textAlign: "center",
           }}
         >

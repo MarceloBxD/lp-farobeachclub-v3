@@ -68,7 +68,7 @@ const Swiper: React.FC<SwiperProps> = ({
     <SwiperContainer
       modules={[Pagination, Navigation, Autoplay]}
       slidesPerView={slidesPerView}
-      spaceBetween={spaceBetween ? spaceBetween : 20}
+      spaceBetween={spaceBetween ? spaceBetween : 0}
       pagination={{
         clickable: true,
         dynamicBullets: true,

@@ -4,7 +4,7 @@ import { Feedback } from "@/components/Feedback/FeedbackRoot";
 import { FEEDBACKS_DATA } from "@/data/feedbacks";
 
 import styles from "./styles.module.scss";
-import { Description, Title } from "@/components/Texts";
+import { Description, Subtitle, Title } from "@/components/Texts";
 import { useApp } from "@/context/AppContext";
 import Swiper from "@/components/Swiper";
 import { Tokens } from "@/data/tokens";
@@ -38,17 +38,17 @@ const Testimonials = () => {
             <Feedback.Content text={feedback.content} />
             <div className={styles.divider} />
             <div className={styles.authorData}>
-              <Title
+              <Subtitle
                 style={{
                   fontWeight: 500,
                 }}
               >
                 {feedback.author}
-              </Title>
+              </Subtitle>
               <Description
                 style={{
                   fontStyle: "italic",
-                  color: "#aaa",
+                  color: "#e29696",
                 }}
               >
                 {feedback.company}

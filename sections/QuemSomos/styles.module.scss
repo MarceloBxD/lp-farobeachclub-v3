@@ -34,7 +34,7 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
-    width: 50%;
+    width: calc(50% - 12px);
     max-height: fit-content;
 
     @media (max-width: 768px) {
@@ -62,8 +62,10 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      min-width: 720px !important;
       position: relative;
+
+      border-radius: 10px;
+      overflow: hidden;
     }
 
    

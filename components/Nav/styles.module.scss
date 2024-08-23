@@ -33,13 +33,13 @@
   }
 
   @media (max-width: 768px) {
-    width: calc(100% - 20px);
+    width: calc(100% - 48px);
     justify-content: space-between;
   }
 }
 
 .nav_menu_mobile {
-  width: calc(100% - 20px);
+  width: calc(100% - 48px);
   margin: 0 auto;
   background-color: #000900;
   height: fit-content;

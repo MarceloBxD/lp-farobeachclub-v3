@@ -2,10 +2,12 @@ import { Title } from "@/components/Texts";
 import { TitleTextProps } from "@/components/TitleText";
 import React from "react";
 import styles from "./styles.module.scss";
+import { useApp } from "@/context/AppContext";
 
-const Headline: React.FC<TitleTextProps> = ({
-  texts: { title },
-}) => {
+const Headline: React.FC<TitleTextProps> = ({ texts: { title } }) => {
+  const {
+    device: { isMobile },
+  } = useApp();
   return (
     <div className={`${styles.container}`}>
       <div
@@ -22,9 +24,11 @@ const Headline: React.FC<TitleTextProps> = ({
           >
             Nos últimos dois anos, estabelecemos conexões memoráveis com mais de
             150 clientes, proporcionando experiências extraordinárias em{" "}
-            <strong style={{
-              fontSize: "1.25rem",
-            }}>
+            <strong
+              style={{
+                fontSize: isMobile ? "unset" : "1.25rem",
+              }}
+            >
               Eventos Corporativos, Festas de Fim de Ano, Formaturas,
               Aniversários, Casamentos, Plenárias
             </strong>{" "}

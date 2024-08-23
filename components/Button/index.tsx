@@ -28,6 +28,7 @@ export interface ButtonProps
   load?: LoadProps;
   onClick?: () => void;
   openBooking?: boolean;
+  eventBanner?: boolean;
   ref?: React.Ref<HTMLButtonElement>;
 }
 
@@ -51,6 +52,7 @@ const Button: React.FC<ButtonProps> = ({
   wrap = false,
   link,
   openBooking = false,
+  eventBanner,
   bannerLink,
   load,
   ref,
@@ -114,7 +116,7 @@ const Button: React.FC<ButtonProps> = ({
     <animated.button
       {...props}
       id={props.id}
-      className={styles.button}
+      className={`${eventBanner ? styles.button  : styles.buttonWithoutShadow}`}
       ref={ref}
       style={{
         ...props.style,

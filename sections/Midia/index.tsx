@@ -56,7 +56,6 @@ const Midia: React.FC<MidiaProps> = ({
       contentStyle={{
         display: "flex",
         flexDirection: "column",
-        gap: 16,
       }}
     >
       {header?.title && <Title>{header?.title}</Title>}

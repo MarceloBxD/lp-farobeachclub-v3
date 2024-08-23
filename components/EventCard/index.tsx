@@ -38,7 +38,6 @@ const EventCard: React.FC<ContentProps> = ({
     });
   };
 
-  console.log("bannerCard", bannerCard);
 
   return (
     <div
@@ -48,6 +47,7 @@ const EventCard: React.FC<ContentProps> = ({
         flexDirection: "column",
         gap: 12
       }}
+      className={styles.card_wrapper}
     >
       <div className={styles.card} onClick={openModal}>
         {disclosure && (

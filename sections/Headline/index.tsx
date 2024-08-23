@@ -4,7 +4,7 @@ import React from "react";
 import styles from "./styles.module.scss";
 
 const Headline: React.FC<TitleTextProps> = ({
-  texts: { title, description },
+  texts: { title },
 }) => {
   return (
     <div className={`${styles.container}`}>

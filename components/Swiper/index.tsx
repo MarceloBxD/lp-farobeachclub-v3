@@ -77,7 +77,6 @@ const Swiper: React.FC<SwiperProps> = ({
         dynamicBullets: true,
         dynamicMainBullets: 3,
       }}
-      centeredSlides={isMobile}
       autoplay={
         autoplay
           ? {

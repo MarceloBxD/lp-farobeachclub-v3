@@ -22,7 +22,7 @@ interface MidiaProps {
   anchorId?: string;
 }
 
-const  Midia: React.FC<MidiaProps> = ({
+const Midia: React.FC<MidiaProps> = ({
   category,
   hasSwiper = true,
   header,
@@ -81,7 +81,11 @@ const  Midia: React.FC<MidiaProps> = ({
         </div>
       )}
       {hasSwiper ? (
-        <Swiper childrenArray={cards} className={styles.container} spaceBetween={20} />
+        <Swiper
+          childrenArray={cards}
+          className={styles.container}
+          spaceBetween={20}
+        />
       ) : (
         <div className={styles.cardList}>{cards}</div>
       )}

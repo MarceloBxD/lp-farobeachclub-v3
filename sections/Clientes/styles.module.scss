@@ -8,9 +8,9 @@
   padding: 5vh 0;
   overflow: hidden;
   margin-bottom: 5vh;
-  
+
   @media (max-width: 768px) {
-   margin-top: 5vh;
+    margin-top: 5vh;
   }
 }
 
@@ -28,8 +28,6 @@
   justify-content: flex-start;
   width: max-content; /* Garante que o conteúdo tenha a largura correta */
   animation: infiniteScroll 60s linear infinite; /* Controla a velocidade da animação */
-
-
 }
 
 .customerItem {
@@ -38,7 +36,6 @@
   width: 150px;
   height: 100px;
 
-  filter: grayscale(100%);
   transition: filter 0.3s ease;
   margin-right: 25px;
 
@@ -51,7 +48,6 @@
     background-repeat: no-repeat;
   }
   &:hover {
-    filter: grayscale(0%);
     cursor: pointer;
   }
 }

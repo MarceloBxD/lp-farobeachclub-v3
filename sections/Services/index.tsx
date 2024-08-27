@@ -27,6 +27,8 @@ const Services: React.FC<{}> = () => {
     "Produtor Executivo",
     "Equipes: Limpeza, Equipe de Segurança, médica, brigada e salva-vidas.",
     "Cozinha (equipamentos sob-consulta)",
+    "Chapelaria",
+    "Foyer",
   ];
 
   return (
@@ -40,7 +42,7 @@ const Services: React.FC<{}> = () => {
       >
         <Title
           style={{
-            margin: isMobile ? '6vh auto' :"6vh auto 12vh",
+            margin: isMobile ? "6vh auto" : "6vh auto 12vh",
             textAlign: "center",
           }}
         >

@@ -48,6 +48,7 @@ const TitleText: React.FC<TitleTextProps> = ({
 
     return button;
   };
+
   return (
     <div
       className={`${styles.container} ${className}`}
@@ -61,7 +62,17 @@ const TitleText: React.FC<TitleTextProps> = ({
         }
           `}
       >
-        {title && <Title>{title}</Title>}
+        {title === "SERVIÇOS" ? (
+          <Title>{title}</Title>
+        ) : (
+          <Title
+            style={{
+              fontSize: "1.85rem",
+            }}
+          >
+            {title}
+          </Title>
+        )}
         <div className={styles.descContainer}>
           {!!description && (
             <div

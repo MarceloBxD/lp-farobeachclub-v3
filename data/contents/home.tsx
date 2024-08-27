@@ -77,7 +77,7 @@ export const eventContent: ContentProps[] = [
 
       description: (
         <ul>
-          <li>Capacidade de até 1000 pessoas (Pista livre)</li>
+          <li>Capacidade de até 900 pessoas (Pista livre)</li>
           <li>01 bar (estrutura fixa)</li>
           <li>01 Copa</li>
           <li>01 camarim com banheiro ou sala de Produção</li>

@@ -1,7 +1,5 @@
 .container {
   height: calc(392px + 6vh);
-
-  
 }
 
 .cardList {
@@ -19,12 +17,11 @@
   flex-direction: row;
   gap: 12px;
   margin-bottom: 5vh;
-  
+
   @media (max-width: 768px) {
     margin-top: 5vh;
     gap: 4px;
     flex-wrap: wrap;
     margin-bottom: 3vh;
-
   }
 }

@@ -13,6 +13,7 @@ export type ContentProps = {
     | "SHOWS REALIZADOS"
     | "ASSESSORIA DE IMPRENSA";
   instagram?: string;
+  bannerCard?: boolean;
   pixieSet?: string;
   disclosure?: boolean;
 };

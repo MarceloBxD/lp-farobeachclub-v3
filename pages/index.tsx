@@ -17,12 +17,15 @@ import {
 import { ContentProps, CustomerProps } from "@/types/content";
 import Head from "next/head";
 import { MapEl } from "@/components/Map";
-import Offering from "@/sections/Offering";
 import { cloudinary } from "@/services/useCloudinary";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import * as gtag from "@/lib/gtagHelper";
 import Faq from "@/sections/Faq";
+import QuemSomos from "@/sections/QuemSomos";
+import Headline from "@/sections/Headline";
+import Testimonials from "@/sections/Testimonials";
+import Services from "@/sections/Services";
 
 type HomeProps = {
   homeContent: {
@@ -43,6 +46,7 @@ type HomeProps = {
   PHONE_NUMBER: string;
   MAPS_API_KEY: string;
   midia: ContentProps[];
+  videoUrl: string;
 };
 
 function Home({
@@ -52,6 +56,7 @@ function Home({
   FORM_ID,
   customers,
   PORTAL_ID,
+  videoUrl,
   PHONE_NUMBER,
   midia,
   MAPS_API_KEY,
@@ -91,53 +96,33 @@ function Home({
 
       <Banner content={homeBanner} event={getEventDisclosed(events)} />
 
-      <TitleTextSwiper
+      <Headline
         texts={eventContent[0].texts}
         button={eventContent[0].button}
-        // swiperdata={homeBanner[0]?.images || []}
         anchor={eventContent[0].anchor}
       />
-      <TitleTextSwiper
-        texts={eventContent[1].texts}
-        button={eventContent[1].button}
-        swiperdata={homeContent[1]?.images || []}
-        anchor={eventContent[1].anchor}
-        inverse
-      />
-
-      <TitleTextSwiper
-        texts={eventContent[2].texts}
-        button={eventContent[2].button}
-        swiperdata={homeContent[2]?.images || []}
-        anchor={eventContent[2].anchor}
-      />
-
-      <Offering />
 
       <Midia
-        anchorId="eventos-privados"
+        anchorId="eventos"
         category="EVENTOS REALIZADOS"
         content={midia?.filter((item) => {
           return item.category === "EVENTOS REALIZADOS";
         })}
       />
 
-      {/* <Midia
-        category="SHOWS REALIZADOS"
-        content={midia?.filter((item) => {
-          return item.category === "SHOWS REALIZADOS";
-        })}
+      <QuemSomos
+        videoUrl={videoUrl}
+        eventContent={eventContent}
+        homeContent={homeContent}
       />
 
-      <Midia
-        category="ASSESSORIA DE IMPRENSA"
-        content={midia?.filter((item) => {
-          return item.category === "ASSESSORIA DE IMPRENSA";
-        })}
-      /> */}
+      <Services />
+
+      <Testimonials />
+
+      <Clientes customers={customers} />
 
       <Faq faq={faqData} />
-      <Clientes customers={customers} />
 
       <Contato phone={PHONE_NUMBER}>
         <MapEl apiKey={MAPS_API_KEY} />

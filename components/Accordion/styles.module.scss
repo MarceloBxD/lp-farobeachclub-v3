@@ -15,11 +15,18 @@
     justify-content: space-between;
     padding: 5px 10px;
     align-items: center;
+      flex-shrink: 0;
 
     .chevronIcon {
       width: 36px;
       height: 36px;
+      flex-shrink: 0;
       transition: transform 0.3s;
+
+      @media (max-width: 768px) {
+        width: 24px;
+        height: 24px;
+        }
     }
 
     .rotate {

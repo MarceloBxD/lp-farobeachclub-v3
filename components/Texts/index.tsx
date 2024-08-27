@@ -8,6 +8,7 @@ interface TextProps extends React.HTMLAttributes<HTMLDivElement> {
   weight?: 300 | 400 | 700;
   family?: "Montserrat" | "Termina Test";
   wrap?: boolean;
+  navCaption?: boolean;
 }
 
 const checkFontFamily = (family: "Montserrat" | "Termina Test") => {
@@ -51,7 +52,7 @@ export const Subtitle = ({
   return (
     <h2
       {...props}
-      className={`${styles.subtitle}`}
+      className={`${styles.subtitle} ${props.className}`}
       style={{
         fontWeight: weight,
         color: color,
@@ -120,12 +121,13 @@ export const Caption = ({
   weight = 400,
   family = "Montserrat",
   wrap = true,
+  navCaption,
   ...props
 }: TextProps) => {
   return (
     <p
       {...props}
-      className={`${styles.caption}`}
+      className={` ${navCaption ? styles.nav_caption : styles.caption}`}
       style={{
         fontWeight: weight,
         color: color,

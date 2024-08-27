@@ -19,13 +19,17 @@ export const MidiaCard = ({
   tag,
   title,
   link,
+  type,
   description,
   fixed,
   category,
   pixieSet,
   anchorId,
 }: ContentProps) => {
-  const { setModalActive } = useApp();
+  const {
+    setModalActive,
+    device: { isMobile },
+  } = useApp();
   const dateFormatted =
     date &&
     new Date(date).toLocaleDateString("pt-BR", {
@@ -53,61 +57,27 @@ export const MidiaCard = ({
   const brokenLink = link?.includes("drive.google");
 
   return (
-    <div
-      id={anchorId}
-      className={styles.card}
-      onMouseEnter={enterSpring}
-      onMouseLeave={leaveSpring}
-      onClick={() => {
-        enterSpring();
-      }}
-    >
-      <Image alt={title} src={banner} layout="fill" className={styles.img} />
+    <>
+      <div
+        id={anchorId}
+        className={styles.card}
+        onMouseEnter={enterSpring}
+        onMouseLeave={leaveSpring}
+        onClick={() => {
+          enterSpring();
+        }}
+      >
+        <Image alt={title} src={banner} layout="fill" className={styles.img} />
 
-      {fixed && <Fixed />}
-      {tag && <Badge text={tag} />}
+        {fixed && <Fixed />}
+        {tag && <Badge text={tag} />}
 
-      <div className={styles.content}>
-        <Subtitle
-          style={{
-            color: Tokens.colors.neutral.white,
-            marginTop: 12,
-          }}
-        >
-          {date && <span>{dateFormatted} - </span>}
-          {title}
-        </Subtitle>
-        {description && (
-          <InfoBox description={description} spring={infoSpring} />
-        )}
+        <div className={styles.content}>
+          {description && (
+            <InfoBox description={description} spring={infoSpring} />
+          )}
 
-        {category === "ASSESSORIA DE IMPRENSA" ? (
-          <Button
-            id="btn-midia-card"
-            variant="white-black"
-            style={{
-              width: "100%",
-              marginTop: 12,
-            }}
-            link={brokenLink ? link : undefined}
-            onClick={() => {
-              !brokenLink &&
-                setModalActive({
-                  banner,
-                  title,
-                  description,
-                  type: "Midia",
-                  link,
-                  category,
-                  date,
-                  tag,
-                });
-            }}
-          >
-            Ver <b>matéria</b>
-          </Button>
-        ) : pixieSet && isVideoUrl(link ?? "") ? (
-          <>
+          {category === "ASSESSORIA DE IMPRENSA" ? (
             <Button
               id="btn-midia-card"
               variant="white-black"
@@ -115,21 +85,96 @@ export const MidiaCard = ({
                 width: "100%",
                 marginTop: 12,
               }}
+              link={brokenLink ? link : undefined}
               onClick={() => {
-                setModalActive({
-                  banner,
-                  title,
-                  description,
-                  type: "Midia",
-                  link,
-                  category,
-                  date,
-                  tag,
-                });
+                !brokenLink &&
+                  setModalActive({
+                    banner,
+                    title,
+                    description,
+                    type: "Midia",
+                    link,
+                    category,
+                    date,
+                    tag,
+                  });
+              }}
+            >
+              Ver <b>matéria</b>
+            </Button>
+          ) : pixieSet && isVideoUrl(link ?? "") ? (
+            <>
+              <Button
+                id="btn-midia-card"
+                variant="white-black"
+                style={{
+                  width: "100%",
+                  marginTop: 12,
+                }}
+                onClick={() => {
+                  setModalActive({
+                    banner,
+                    title,
+                    description,
+                    type: "Midia",
+                    link,
+                    category,
+                    date,
+                    tag,
+                  });
+                }}
+              >
+                Ver <b>vídeo</b>
+              </Button>
+              <Button
+                id="btn-midia-card"
+                variant="white-black"
+                style={{
+                  width: "100%",
+                  marginTop: 12,
+                }}
+                onClick={() => {
+                  setModalActive({
+                    banner,
+                    title,
+                    description,
+                    type: "Midia",
+                    link: pixieSet,
+                    category,
+                    date,
+                    tag,
+                  });
+                }}
+              >
+                Ver <b>fotos</b>
+              </Button>
+            </>
+          ) : isVideoUrl(link ?? "") ? (
+            <Button
+              id="btn-midia-card"
+              variant="white-black"
+              style={{
+                width: "100%",
+                marginTop: 12,
+              }}
+              link={brokenLink ? link : undefined}
+              onClick={() => {
+                !brokenLink &&
+                  setModalActive({
+                    banner,
+                    title,
+                    description,
+                    type: "Midia",
+                    link,
+                    category,
+                    date,
+                    tag,
+                  });
               }}
             >
               Ver <b>vídeo</b>
             </Button>
+          ) : (
             <Button
               id="btn-midia-card"
               variant="white-black"
@@ -137,74 +182,41 @@ export const MidiaCard = ({
                 width: "100%",
                 marginTop: 12,
               }}
+              link={brokenLink ? link : undefined}
               onClick={() => {
-                setModalActive({
-                  banner,
-                  title,
-                  description,
-                  type: "Midia",
-                  link: pixieSet,
-                  category,
-                  date,
-                  tag,
-                });
+                !brokenLink &&
+                  setModalActive({
+                    banner,
+                    title,
+                    description,
+                    type: "Midia",
+                    link,
+                    category,
+                    date,
+                    tag,
+                  });
               }}
             >
               Ver <b>fotos</b>
             </Button>
-          </>
-        ) : isVideoUrl(link ?? "") ? (
-          <Button
-            id="btn-midia-card"
-            variant="white-black"
-            style={{
-              width: "100%",
-              marginTop: 12,
-            }}
-            link={brokenLink ? link : undefined}
-            onClick={() => {
-              !brokenLink &&
-                setModalActive({
-                  banner,
-                  title,
-                  description,
-                  type: "Midia",
-                  link,
-                  category,
-                  date,
-                  tag,
-                });
-            }}
-          >
-            Ver <b>vídeo</b>
-          </Button>
-        ) : (
-          <Button
-            id="btn-midia-card"
-            variant="white-black"
-            style={{
-              width: "100%",
-              marginTop: 12,
-            }}
-            link={brokenLink ? link : undefined}
-            onClick={() => {
-              !brokenLink &&
-                setModalActive({
-                  banner,
-                  title,
-                  description,
-                  type: "Midia",
-                  link,
-                  category,
-                  date,
-                  tag,
-                });
-            }}
-          >
-            Ver <b>fotos</b>
-          </Button>
-        )}
+          )}
+        </div>
       </div>
-    </div>
+      <Subtitle
+        style={{
+          marginTop: 12,
+          textAlign: "center",
+        }}
+        className={styles.title}
+      >
+        {date && <span>{dateFormatted} - </span>}
+        <Badge
+          text={title}
+          color="black"
+          family="Montserrat"
+          className={styles.title}
+        />
+      </Subtitle>
+    </>
   );
 };

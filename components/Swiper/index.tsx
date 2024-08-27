@@ -16,36 +16,36 @@ import Load from "../Load";
 import { Tokens } from "@/data/tokens";
 
 interface SwiperProps extends React.HTMLAttributes<HTMLDivElement> {
-  childrenArray?: React.ReactNode[] ;
+  childrenArray?: React.ReactNode[];
   slidesPerView?: number | "auto";
   spaceBetween?: number;
   breakpoints?: {
     [key: string]: {
-      slidesPerView: number;
+      slidesPerView: number | "auto";
       spaceBetween: number;
     };
   };
-  hasPadding?: boolean;
   style?: React.CSSProperties;
   classes?: "mobile" | "desktop";
   autoplay?: boolean;
+  navigation?: boolean;
 }
 
 const Swiper: React.FC<SwiperProps> = ({
   childrenArray,
   slidesPerView = "auto",
   breakpoints,
-  hasPadding,
   spaceBetween,
   autoplay = false,
+  navigation = true,
   style,
   classes,
+  ...props
 }) => {
-  const [isLoading, setIsLoading] = React.useState(true);
   const {
-    pageMargin,
     device: { isMobile },
   } = useApp();
+  const [isLoading, setIsLoading] = React.useState(true);
 
   React.useEffect(() => {
     const timeout = setTimeout(() => {
@@ -71,45 +71,43 @@ const Swiper: React.FC<SwiperProps> = ({
     <SwiperContainer
       modules={[Pagination, Navigation, Autoplay]}
       slidesPerView={slidesPerView}
-      spaceBetween={spaceBetween ? spaceBetween : isMobile ? 24 : 48}
+      spaceBetween={spaceBetween ? spaceBetween : 0}
       pagination={{
         clickable: true,
         dynamicBullets: true,
         dynamicMainBullets: 3,
       }}
-      // loop={true}
       autoplay={
         autoplay
           ? {
-              delay: 7000,
-              disableOnInteraction: true,
+              delay: 2000,
               pauseOnMouseEnter: true,
             }
           : false
       }
-      navigation={true}
+      navigation={navigation}
       breakpoints={breakpoints}
       style={{
         width: "100%",
-        paddingLeft: hasPadding ? pageMargin : 0,
-        paddingRight: hasPadding ? pageMargin : 0,
-        paddingBottom: childrenArray.length > 1 ? 64 : 0,
         overflowY: "visible",
         ...style,
       }}
+      className={props.className}
     >
-      {childrenArray.map((child, index) => (
-        <SwiperSlide
-          className={classes}
-          key={index}
-          style={{
-            width: "fit-content",
-            height: "100%",
-          }}
-        >
-          {child}
-        </SwiperSlide>
-      ))}
+      {childrenArray.map((child, index) => {
+        return (
+          <SwiperSlide
+            className={classes}
+            key={index}
+            style={{
+              width: "fit-content",
+              height: "100%",
+            }}
+          >
+            {child}
+          </SwiperSlide>
+        );
+      })}
     </SwiperContainer>
   );
 };

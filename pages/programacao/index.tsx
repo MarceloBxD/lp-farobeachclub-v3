@@ -52,49 +52,13 @@ function Page({
           <Logo color="green" />
         </div>
 
-        <TitleTextSwiper
-          className={styles.titleSwiper}
-          texts={{
-            title: (
-              <>
-                Conheça nossa{' '}
-                <br />
-                <b>Programação</b>
-              </>
-            ),
-            description: (
-              <Description
-                style={{
-                  lineHeight: "1.5",
-                }}
-              >
-                Nos últimos 2 anos, estabelecemos conexões memoráveis com mais
-                de 100 empresas,{" "}
-                <b
-                  style={{
-                    display: "inline",
-                  }}
-                >
-                  proporcionando experiências extraordinárias em eventos
-                  corporativos, festas particulares, gravações áudio visuais
-                  entre outros
-                </b>
-                .<br />
-                <br />
-                Além disso, orgulhamo-nos de ter realizado mais de 120 shows
-                inesquecíveis, trazendo artistas renomados do cenário mundial
-                para nossos palcos.
-              </Description>
-            ),
-          }}
+        <Programacao
           style={{
-            marginBottom: 0,
-            minHeight: "75vh",
+            paddingTop: 120,
+            marginTop: 0,
           }}
-          video={videoUrl}
+          events={events}
         />
-
-        <Programacao events={events} />
 
         <Midia
           category="SHOWS REALIZADOS"

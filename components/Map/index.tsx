@@ -1,15 +1,11 @@
 import React, { useMemo } from "react";
 import styles from "./styles.module.scss";
 
-import {
-  GoogleMap,
-  useJsApiLoader,
-  Marker,
-} from "@react-google-maps/api";
+import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 
 type MapProps = {
   apiKey: string;
-}
+};
 
 export const MapEl: React.FC<MapProps> = ({ apiKey }) => {
   const center = {
@@ -22,8 +18,7 @@ export const MapEl: React.FC<MapProps> = ({ apiKey }) => {
     googleMapsApiKey: apiKey,
   });
 
-  
-  if (!isLoaded) return <div>Carregando...</div>
+  if (!isLoaded) return <div>Carregando...</div>;
   return (
     <div className={styles.container}>
       <GoogleMap

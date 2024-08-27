@@ -1,3 +1,10 @@
+.card_wrapper {
+  @media (max-width: 768px){
+    padding-bottom: 16px;
+  }
+}
+
+
 .card {
   height: fit-content;
   width: 315px;
@@ -27,7 +34,7 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 12px;
-height: fit-content;
+  height: fit-content;
   @media (max-width: 1024px) {
     flex-direction: column;
 

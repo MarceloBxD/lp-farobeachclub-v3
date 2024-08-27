@@ -1,6 +1,4 @@
 import React from "react";
-import Subtitle from "../Subtitle";
-import Text from "../Text";
 import Wrapper from "../Wrapper";
 import SectionLabel from "../SectionLabel";
 
@@ -14,6 +12,7 @@ const SubtitleAndText: React.FC<SubtitleAndTextProps> = ({
   subtitle,
   text,
 }) => {
+ 
   return (
     <Wrapper>
       <SectionLabel text={subtitle} title={text} />

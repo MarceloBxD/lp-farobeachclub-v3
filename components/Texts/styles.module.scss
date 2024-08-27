@@ -21,6 +21,20 @@
 .caption {
   font-size: 14px;
   line-height: 100%;
+  white-space: wrap;
+  max-width: 90%;
+
+}
+
+.nav_caption {
+  font-size: calc(1 * 14px);
+
+  @media (max-width: 430px) {
+    max-width: 50px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 }
 
 @media (max-width: 768px) {

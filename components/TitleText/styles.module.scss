@@ -9,15 +9,23 @@
   > div {
     display: flex;
     flex-direction: column;
-align-items: flex-start;
+    align-items: flex-start;
     gap: 24px;
-    max-width: 75%;
 
     @media (max-width: 768px) {
       max-width: 100%;
-    gap: 12px;
+      gap: 12px;
+    }
+  }
 
-      padding: 0 10px !important;
+  .descContainer {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+
+    @media (max-width: 1375px) {
+      flex-direction: column;
+      gap: 2rem;
     }
   }
 
@@ -33,7 +41,6 @@ align-items: flex-start;
     }
 
     p {
-      max-width: 75%;
       margin: auto;
     }
 
@@ -49,7 +56,6 @@ align-items: flex-start;
   }
 
   .noMidia {
-
     h1 {
       max-width: 100% !important;
       margin: 0 auto;
@@ -59,5 +65,8 @@ align-items: flex-start;
       max-width: 100% !important;
       text-align: center;
     }
+  }
+
+  .hasMidia {
   }
 }

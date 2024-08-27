@@ -18,7 +18,7 @@ const TitleTextSwiper: React.FC<TitleTextSwiperProps> = ({
   button,
   swiperdata,
   inverse,
-  texts: { title, description },
+  texts: { title, description, bullets },
   anchor,
   video,
   ...props
@@ -27,6 +27,7 @@ const TitleTextSwiper: React.FC<TitleTextSwiperProps> = ({
     device: { isMobile },
   } = useApp();
   const isMuted = true;
+  const isSectionInHome = !!title // if title is empty, it's the section in home
 
   return (
     <div
@@ -35,7 +36,7 @@ const TitleTextSwiper: React.FC<TitleTextSwiperProps> = ({
       style={{
         flexDirection: inverse ? "row-reverse" : "row",
         height: "fit-content",
-        minHeight: isMobile ? "fit-content" : "650px",
+        minHeight: isMobile ? "fit-content" : "450px",
         alignItems: "center",
         ...props.style,
       }}
@@ -53,8 +54,9 @@ const TitleTextSwiper: React.FC<TitleTextSwiperProps> = ({
         texts={{
           title,
           description,
+          bullets,
         }}
-        centered
+        centered={isSectionInHome}
         hasMidia={!!video || !!swiperdata}
       />
       {video ? (
@@ -65,6 +67,8 @@ const TitleTextSwiper: React.FC<TitleTextSwiperProps> = ({
             height: "100%",
             overflow: "hidden",
             zIndex: 0,
+            boxShadow: '0 5px 15px rgba(0,0,0,.25)',
+            borderRadius: '10px',
           }}
         >
           <video

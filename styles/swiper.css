@@ -3,6 +3,7 @@
 .swiper-pagination {
   width: 150px !important;
   bottom: 28px !important;
+  bottom: 0 !important;
 }
 
 .swiper-pagination-bullet-active {
@@ -23,9 +24,8 @@
   width: 48px !important;
   height: 48px !important;
 
-  bottom: 8px !important;
+  bottom: -12px !important;
   top: unset !important;
-  left: 24px !important;
 }
 
 .swiper-button-disabled.swiper-button-prev {
@@ -38,23 +38,26 @@
   width: 48px !important;
   height: 48px !important;
 
-  bottom: 8px !important;
+  bottom: -12px !important;
   top: unset !important;
-  right: 24px !important;
-
 }
 
 .swiper-button-disabled.swiper-button-next {
   background-image: url(../assets/imgs/arrow-right-disabled.png);
 }
 
-
 @media (max-width: 768px) {
+  .swiper-pagination {
+    bottom: -38px !important;
+  }
+
   .swiper-button-next {
-    right: 10px !important;
+    right: 20px;
+    bottom: -50px !important;
   }
 
   .swiper-button-prev {
-    left: 10px !important;
+    left: 20px;
+    bottom: -50px !important;
   }
 }

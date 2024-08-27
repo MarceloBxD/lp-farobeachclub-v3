@@ -25,8 +25,10 @@ export interface ButtonProps
   wrap?: boolean;
   link?: string;
   load?: LoadProps;
+  bannerLink?: boolean;
   onClick?: () => void;
   openBooking?: boolean;
+  eventBanner?: boolean;
   ref?: React.Ref<HTMLButtonElement>;
 }
 
@@ -50,6 +52,8 @@ const Button: React.FC<ButtonProps> = ({
   wrap = false,
   link,
   openBooking = false,
+  eventBanner,
+  bannerLink,
   load,
   ref,
   ...props
@@ -97,6 +101,7 @@ const Button: React.FC<ButtonProps> = ({
   };
 
   const onClick = () => {
+    console.log("openBooking", openBooking);
     openBooking && setBookingActive(true);
     props.onClick && props.onClick();
 
@@ -112,7 +117,7 @@ const Button: React.FC<ButtonProps> = ({
     <animated.button
       {...props}
       id={props.id}
-      className={styles.button}
+      className={`${eventBanner ? styles.button  : styles.buttonWithoutShadow}`}
       ref={ref}
       style={{
         ...props.style,
@@ -169,6 +174,7 @@ const Button: React.FC<ButtonProps> = ({
         {button}
       </a>
     );
+
   return button;
 };
 

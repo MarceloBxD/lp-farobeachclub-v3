@@ -8,6 +8,7 @@ import { weekday } from "@/utils/dateFuncs";
 import { useApp } from "@/context/AppContext";
 
 import CloseIcon from "@/assets/icons/CloseIcon";
+import DataLayer from "@/utils/DataLayer";
 
 const EventCard: React.FC<ContentProps> = ({
   date,
@@ -17,9 +18,10 @@ const EventCard: React.FC<ContentProps> = ({
   link,
   tag,
   instagram,
+  bannerCard,
   disclosure = false,
 }) => {
-  const { setModalActive, bookingActive } = useApp();
+  const { setModalActive, bookingActive, setBookingActive } = useApp();
   const [cardBannerActive, setCardBannerActive] = React.useState(true);
 
   const openModal = () => {
@@ -42,7 +44,9 @@ const EventCard: React.FC<ContentProps> = ({
       style={{
         display: cardBannerActive && !bookingActive ? "flex" : "none",
         flexDirection: "column",
+        gap: 12,
       }}
+      className={styles.card_wrapper}
     >
       <div className={styles.card} onClick={openModal}>
         {disclosure && (
@@ -71,17 +75,49 @@ const EventCard: React.FC<ContentProps> = ({
           </div>
         )}
       </div>
-      <Button
-        link={link}
-        style={{
-          width: "100%",
-          marginTop: "10px",
-          position: "relative",
-        }}
-        id="comprar_ingresso_click"
-      >
-        Comprar <b>Ingressos</b>
-      </Button>
+      {bannerCard ? (
+        <Button
+          bannerLink
+          link={link}
+          style={{
+            width: "100%",
+          }}
+          onClick={() => {
+            DataLayer.clickEvent({
+              element: title,
+              elementCategory: "botao",
+              pageSection: "eventos",
+              pageSubsection: "eventos",
+            });
+            setBookingActive(true);
+          }}
+          id="comprar_ingresso_click"
+        >
+          <b>Faça seu orçamento!</b>
+        </Button>
+      ) : (
+        <Button
+          link={link}
+          style={{
+            width: "100%",
+            }}
+            openBooking={false}
+            onClick={() => {
+              console.log("link", link)
+            DataLayer.clickEvent({
+              element: title,
+              elementCategory: "botao",
+              pageSection: "eventos",
+              pageSubsection: "eventos",
+            });
+          }}
+          id="comprar_ingresso_click"
+        >
+          <>
+            Comprar <b>Ingressos</b>
+          </>
+        </Button>
+      )}
     </div>
   );
 };

@@ -32,74 +32,64 @@ const Midia: React.FC<MidiaProps> = ({
 }) => {
   if (content === null) return null;
 
-  const cards = content?.map((item, idx) => (
-    <MidiaCard
-      anchorId={anchorId}
-      key={idx}
-      date={item.date}
-      banner={item.banner}
-      tag={item.tag}
-      title={item.title}
-      link={item.link}
-      description={item.description}
-      fixed={item.fixed}
-      type={item.type}
-      category={item.category}
-      pixieSet={item.pixieSet}
-    />
-  ));
+  const cards = content?.map((item, idx) => {
+    return (
+      <MidiaCard
+        anchorId={anchorId}
+        key={idx}
+        date={item.date}
+        banner={item.banner}
+        tag={item.tag}
+        title={item.title}
+        link={item.link}
+        description={item.description}
+        fixed={item.fixed}
+        type={item.type}
+        category={item.category}
+        pixieSet={item.pixieSet}
+      />
+    );
+  });
 
   return (
-    <div className={styles.container} style={style}>
-      <Wrapper
-        style={{
-          paddingTop: 0,
-          paddingBottom: 0,
-        }}
-        contentStyle={{
-          display: "flex",
-          flexDirection: "column",
-          gap: 16,
-        }}
-      >
-        {header?.title && <Title>{header?.title}</Title>}
-        {header?.description && (
-          <Description>{header?.description}</Description>
-        )}
-        {category ? (
-          <div className={styles.badgeText}>
-            <Badge text={category} color="#000" borderColor="transparent" />
-          </div>
-        ) : (
-          <div className={styles.badgeText}>
-            {[
-              "EVENTOS REALIZADOS",
-              "SHOWS REALIZADOS",
-              "ASSESSORIA DE IMPRENSA",
-            ].map((item, idx) => (
-              <Badge
-                text={item}
-                key={idx}
-                color="#000"
-                borderColor="transparent"
-              />
-            ))}
-          </div>
-        )}
-      </Wrapper>
-      {hasSwiper ? (
-        <Swiper hasPadding childrenArray={cards} />
+    <Wrapper
+      contentStyle={{
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
+      {header?.title && <Title>{header?.title}</Title>}
+      {header?.description && <Description>{header?.description}</Description>}
+      {category ? (
+        <div className={styles.badgeText}>
+          <Badge text={category} color="#000" borderColor="transparent" />
+        </div>
       ) : (
-        <Wrapper
-          style={{
-            paddingTop: 0,
-            paddingBottom: 0,
-          }}
-        >
-          <div className={styles.cardList}>{cards}</div>
-        </Wrapper>
+        <div className={styles.badgeText}>
+          {[
+            "EVENTOS REALIZADOS",
+            "SHOWS REALIZADOS",
+            "ASSESSORIA DE IMPRENSA",
+          ].map((item, idx) => (
+            <Badge
+              text={item}
+              key={idx}
+              color="#000"
+              borderColor="transparent"
+            />
+          ))}
+        </div>
       )}
-    </div>
+      {hasSwiper ? (
+        <Swiper
+          childrenArray={cards}
+          className={styles.container}
+          spaceBetween={20}
+        />
+      ) : (
+        <div className={styles.cardList}>{cards}</div>
+      )}
+    </Wrapper>
   );
 };
 

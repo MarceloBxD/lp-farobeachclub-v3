@@ -9,6 +9,7 @@ import React, {
   useMemo,
 } from "react";
 import { ContentProps } from "@/types/content";
+import axios from "axios";
 
 type ContextProps = {
   pageMargin: number;

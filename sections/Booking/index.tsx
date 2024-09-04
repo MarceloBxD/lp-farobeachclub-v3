@@ -5,13 +5,11 @@ import { useSpring, animated } from "react-spring";
 import styles from "./styles.module.scss";
 import { useApp } from "@/context/AppContext";
 import BookingForm from "@/components/BookingForm";
-import { ContentProps } from "@/types/content";
 
 export type BookingProps = {
   formId: string;
   portalId: string;
   phone?: string;
-
 };
 
 const Booking = ({ formId, portalId, phone }: BookingProps) => {

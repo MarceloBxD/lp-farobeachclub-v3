@@ -124,7 +124,7 @@ function Home({
 
       <Faq faq={faqData} />
 
-      <Contato phone={PHONE_NUMBER}>
+      <Contato>
         <MapEl apiKey={MAPS_API_KEY} />
       </Contato>
     </>

@@ -10,7 +10,7 @@ interface ContatoProps
   extends React.HTMLAttributes<HTMLDivElement>,
     WppButtonProps {}
 
-const Contato: React.FC<ContatoProps> = ({ children, phone, ...props }) => {
+const Contato: React.FC<ContatoProps> = ({ children, ...props }) => {
   return (
     <Wrapper
       anchor="contato"
@@ -41,7 +41,7 @@ const Contato: React.FC<ContatoProps> = ({ children, phone, ...props }) => {
           <PhoneButtonLabel
             button={{
               icon: <WhatsappIcon fill={"#00A000"} />,
-              phone: "5521995521979",
+              phone: "5521997130244",
             }}
             label={{
               title: "",

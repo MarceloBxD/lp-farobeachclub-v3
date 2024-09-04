@@ -41,14 +41,27 @@ const Contato: React.FC<ContatoProps> = ({ children, ...props }) => {
           <PhoneButtonLabel
             button={{
               icon: <WhatsappIcon fill={"#00A000"} />,
-              phone: "5521997130244",
+              phone: "5521995521979",
             }}
             label={{
-              title: "",
+              title: "Locação para Eventos",
             }}
             whatsapp={{
               message:
-                "Olá, vim pelo site do Faro Beach Club e gostaria de falar com um especialista sobre Eventos Corporativos.",
+                "Olá, vim pelo site do Faro Beach Club e gostaria de falar com um especialista sobre LOCAÇÃO PARA EVENTOS.",
+            }}
+          />
+          <PhoneButtonLabel
+            button={{
+              icon: <WhatsappIcon fill={"#00A000"} />,
+              phone: "5521997130244",
+            }}
+            label={{
+              title: "Informações",
+            }}
+            whatsapp={{
+              message:
+                "Olá, vim pelo site do Faro Beach Club e gostaria de falar com um especialista para mais INFORMAÇÕES.",
             }}
           />
         </div>

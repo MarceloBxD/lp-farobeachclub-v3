@@ -32,6 +32,8 @@ type ContextProps = {
   modalActive: ContentProps | null;
   setModalActive: React.Dispatch<React.SetStateAction<ContentProps | null>>;
 
+  cloudinaryIsOFF: boolean;
+
 };
 
 const AppContext = createContext({} as ContextProps);
@@ -40,6 +42,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [pageMargin, setPageMargin] = useState(0);
   const [bookingActive, setBookingActive] = useState(false);
   const [modalActive, setModalActive] = useState<ContentProps | null>(null);
+  const cloudinaryIsOFF = true;
 
   const [device, setDevice] = useState<{
     isMobile: boolean;
@@ -72,6 +75,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       setDevice,
       modalActive,
       setModalActive,
+      cloudinaryIsOFF,
     }),
     [
       pageMargin,
@@ -82,6 +86,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       setDevice,
       modalActive,
       setModalActive,
+      cloudinaryIsOFF
     ]
   );
 

@@ -25,9 +25,10 @@ const TitleTextSwiper: React.FC<TitleTextSwiperProps> = ({
 }) => {
   const {
     device: { isMobile },
+    cloudinaryIsOFF,
   } = useApp();
   const isMuted = true;
-  const isSectionInHome = !!title // if title is empty, it's the section in home
+  const isSectionInHome = !!title; // if title is empty, it's the section in home
 
   return (
     <div
@@ -67,26 +68,38 @@ const TitleTextSwiper: React.FC<TitleTextSwiperProps> = ({
             height: "100%",
             overflow: "hidden",
             zIndex: 0,
-            boxShadow: '0 5px 15px rgba(0,0,0,.25)',
-            borderRadius: '10px',
+            boxShadow: "0 5px 15px rgba(0,0,0,.25)",
+            borderRadius: "10px",
           }}
         >
-          <video
-            muted={isMuted}
-            autoPlay={true}
-            loop={true}
-            playsInline={true}
-            controls={false}
-            preload="auto"
-            poster="public/home.jpg"
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-            }}
-          >
-            <source src={video} />
-          </video>
+          {cloudinaryIsOFF ? (
+            <Image
+              src={"/home.jpg"}
+              alt="Faro Beach Club"
+              objectFit="cover"
+              quality={100}
+              layout="responsive"
+              width={isMobile ? 300 : 474}
+              height={isMobile ? 200 : 250}
+            />
+          ) : (
+            <video
+              muted={isMuted}
+              autoPlay={true}
+              loop={true}
+              playsInline={true}
+              controls={false}
+              preload="auto"
+              poster="public/home.jpg"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+              }}
+            >
+              <source src={video} />
+            </video>
+          )}
         </div>
       ) : swiperdata ? (
         <Swiper

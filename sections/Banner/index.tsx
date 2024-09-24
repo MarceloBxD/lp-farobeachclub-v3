@@ -8,6 +8,7 @@ import { ContentProps } from "@/types/content";
 import SoundWave from "@/components/SoundWave";
 import BannerButton from "@/components/BannerButton";
 import { isVideoUrl } from "@/utils/isVideo";
+import { useApp } from "@/context/AppContext";
 
 type BannerProps = {
   event?: ContentProps;
@@ -18,6 +19,7 @@ type BannerProps = {
 };
 
 const Banner: React.FC<BannerProps> = ({ event, content }) => {
+  const { cloudinaryIsOFF } = useApp();
   const [url, setUrl] = useState<string>(content.desktop[0]);
   const [isMuted, setIsMuted] = useState<boolean>(true);
 
@@ -35,9 +37,17 @@ const Banner: React.FC<BannerProps> = ({ event, content }) => {
 
   return (
     <div className={styles.wrapper}>
-      {isVideoUrl(url) ? (
-        <>
-          <DisclosureEvent event={event} />
+      <>
+        <DisclosureEvent event={event} />
+        {cloudinaryIsOFF || !isVideoUrl(url) ? (
+          <Image
+            src={"/home.jpg"}
+            alt="Faro Beach Club"
+            layout="fill"
+            objectFit="cover"
+            quality={100}
+          />
+        ) : (
           <video
             src={url}
             width="100%"
@@ -53,19 +63,8 @@ const Banner: React.FC<BannerProps> = ({ event, content }) => {
               video?.play();
             }}
           />
-        </>
-      ) : (
-        <>
-          {/* <BannerButton /> */}
-          <Image
-            src={"/home.jpg"}
-            alt="Faro Beach Club"
-            layout="fill"
-            objectFit="cover"
-            quality={100}
-          />
-        </>
-      )}
+        )}
+      </>
 
       <div className={styles.logo_wrapper}>
         <Logo />

@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useRef } from "react";
+import React from "react";
 import { Description } from "../Texts";
 import styles from "./styles.module.scss";
-import { animated, useSpring } from "react-spring";
+import { animated, useSpring, config } from "react-spring";
 import { button_theme } from "./data_button";
 import Load, { LoadProps } from "../Load";
 import { useApp } from "@/context/AppContext";
@@ -51,19 +51,12 @@ const Button: React.FC<ButtonProps> = ({
   // Detect when button is in view
   const { ref: inViewRef, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
-  // Animation for appearance with stronger bounce and faster entry
+  // Animation to create the gradient shine effect
   const springProps = useSpring({
-    opacity: inView ? 1 : 0,
-    transform: inView ? 'scale(1)' : 'scale(0.8)',  // More bounce and smaller initial scale
-    config: {
-      tension: 280,  // Higher tension for more dramatic bounce
-      friction: 10,  // Lower friction to emphasize the bounce effect
-      duration: 300,  // Faster animation
-    },
-    from: {
-      transform: 'scale(0.8)',  // Start smaller for a noticeable entrance
-      opacity: 0,
-    },
+    loop: true,  // Infinite loop
+    to: { backgroundPosition: '200%' },  // Move the background across the button
+    from: { backgroundPosition: '-200%' },  // Start the background off-screen
+    config: { duration: 2000 },  // Control the speed of the animation
   });
 
   const [hoverAnimation, set] = useSpring(() => ({
@@ -140,7 +133,9 @@ const Button: React.FC<ButtonProps> = ({
       style={{
         ...props.style,
         ...hoverAnimation,
-        ...springProps, // Add appearance animation with more bounce
+        ...springProps,  // Apply the animated gradient background
+        background: 'linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.4), rgba(255,255,255,0.1))',
+        backgroundSize: '200% 100%',  // Double the width for a smooth transition
       }}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}

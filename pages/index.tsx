@@ -19,13 +19,15 @@ import Head from "next/head";
 import { MapEl } from "@/components/Map";
 import { cloudinary } from "@/services/useCloudinary";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import * as gtag from "@/lib/gtagHelper";
 import Faq from "@/sections/Faq";
 import QuemSomos from "@/sections/QuemSomos";
 import Headline from "@/sections/Headline";
 import Testimonials from "@/sections/Testimonials";
 import Services from "@/sections/Services";
+import React from "react";
+import axios from "axios";
 
 type HomeProps = {
   homeContent: {
@@ -56,7 +58,6 @@ function Home({
   FORM_ID,
   customers,
   PORTAL_ID,
-  videoUrl,
   PHONE_NUMBER,
   midia,
   MAPS_API_KEY,
@@ -80,10 +81,22 @@ function Home({
     };
   });
 
+  const [videoUrl, setVideoUrl] = useState("");
+
   const getEventDisclosed = (events: ContentProps[]) => {
     const event = events.find((event) => event.disclosure);
     return event;
   };
+
+  useEffect(() => {
+    const fetchVideoUrl = async () => {
+      const res = await axios.get('http://localhost:3000/api/video');
+      console.log('response', res);
+      setVideoUrl(res.data.videoUrl);
+    };
+
+    fetchVideoUrl();
+  }, []);
 
   return (
     <>

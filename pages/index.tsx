@@ -17,7 +17,6 @@ import {
 import { ContentProps, CustomerProps } from "@/types/content";
 import Head from "next/head";
 import { MapEl } from "@/components/Map";
-import { cloudinary } from "@/services/useCloudinary";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import * as gtag from "@/lib/gtagHelper";
@@ -48,7 +47,6 @@ type HomeProps = {
   PHONE_NUMBER: string;
   MAPS_API_KEY: string;
   midia: ContentProps[];
-  videoUrl: string;
 };
 
 function Home({
@@ -81,22 +79,10 @@ function Home({
     };
   });
 
-  const [videoUrl, setVideoUrl] = useState("");
-
   const getEventDisclosed = (events: ContentProps[]) => {
     const event = events.find((event) => event.disclosure);
     return event;
   };
-
-  useEffect(() => {
-    const fetchVideoUrl = async () => {
-      const res = await axios.get('http://localhost:3000/api/video');
-      console.log('response', res);
-      setVideoUrl(res.data.videoUrl);
-    };
-
-    fetchVideoUrl();
-  }, []);
 
   return (
     <>
@@ -124,7 +110,6 @@ function Home({
       />
 
       <QuemSomos
-        videoUrl={videoUrl}
         eventContent={eventContent}
         homeContent={homeContent}
       />
@@ -183,10 +168,6 @@ export const getStaticProps = async () => {
     return item.type === "Midia";
   });
 
-  const video = cloudinary.video_url("events_video");
-
-  const videoHttps = video.replace("http:", "https:");
-
   const treatedHomeBanner = (homeBanner: any) => {
     if (!homeBanner[0]?.fields) {
       return {
@@ -212,8 +193,6 @@ export const getStaticProps = async () => {
 
   const treatedHomeBannerUrls = treatedHomeBanner(homeBanner);
 
-  console.log(treatedHomeBannerUrls);
-
   const events = treatContent(allEvents).filter(
     (event) => event.type === "Programação"
   );
@@ -229,7 +208,6 @@ export const getStaticProps = async () => {
       homeContent: treatedImages,
       homeBanner: treatedHomeBannerUrls,
       PORTAL_ID,
-      videoUrl: videoHttps,
       midia,
       customers,
       FORM_ID,

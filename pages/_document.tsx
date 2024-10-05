@@ -93,6 +93,7 @@ function Document({ SMART_TARGET_ID }: Props) {
           type="text/javascript"
           src={"https://smartarget.online/loader.js?u=" + SMART_TARGET_ID}
         />
+        <Script src="https://player.vimeo.com/api/player.js"/>
       </body>
     </Html>
   );

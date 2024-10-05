@@ -6,9 +6,8 @@ import { ArrowDownBanner } from "@/components/ArrowDownBanner";
 import DisclosureEvent from "@/components/DisclosureEvent";
 import { ContentProps } from "@/types/content";
 import SoundWave from "@/components/SoundWave";
-import BannerButton from "@/components/BannerButton";
 import { isVideoUrl } from "@/utils/isVideo";
-import { useApp } from "@/context/AppContext";
+import bannerPoster from "@/public/home.jpg";
 
 type BannerProps = {
   event?: ContentProps;
@@ -19,7 +18,6 @@ type BannerProps = {
 };
 
 const Banner: React.FC<BannerProps> = ({ event, content }) => {
-  const { cloudinaryIsOFF } = useApp();
   const [url, setUrl] = useState<string>(content.desktop[0]);
   const [isMuted, setIsMuted] = useState<boolean>(true);
 
@@ -34,14 +32,18 @@ const Banner: React.FC<BannerProps> = ({ event, content }) => {
     handleResize();
     return () => window.removeEventListener("resize", handleResize);
   }, [content.desktop, content.mobile]);
+  
+  useEffect(() => {
+    console.log('url', url);
+  }, [url]);
 
   return (
     <div className={styles.wrapper}>
       <>
         <DisclosureEvent event={event} />
-        {cloudinaryIsOFF || !isVideoUrl(url) ? (
+        {!isVideoUrl(url) ? (
           <Image
-            src={"/home.jpg"}
+            src={bannerPoster}
             alt="Faro Beach Club"
             layout="fill"
             objectFit="cover"
@@ -57,7 +59,7 @@ const Banner: React.FC<BannerProps> = ({ event, content }) => {
             loop
             playsInline
             preload="auto"
-            poster="public/poster.png"
+            poster={bannerPoster.src}
             onLoad={() => {
               const video = document.querySelector("video");
               video?.play();

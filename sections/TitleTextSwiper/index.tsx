@@ -12,6 +12,7 @@ export interface TitleTextSwiperProps extends TitleTextProps {
     src: string | StaticImageData;
     alt: string;
   }[];
+  mockImage?: boolean;
 }
 
 const TitleTextSwiper: React.FC<TitleTextSwiperProps> = ({
@@ -21,11 +22,11 @@ const TitleTextSwiper: React.FC<TitleTextSwiperProps> = ({
   texts: { title, description, bullets },
   anchor,
   video,
+  mockImage,
   ...props
 }) => {
   const {
     device: { isMobile },
-    cloudinaryIsOFF,
   } = useApp();
   const isMuted = true;
   const isSectionInHome = !!title; // if title is empty, it's the section in home
@@ -60,7 +61,7 @@ const TitleTextSwiper: React.FC<TitleTextSwiperProps> = ({
         centered={isSectionInHome}
         hasMidia={!!video || !!swiperdata}
       />
-      {video ? (
+      {video || mockImage ? (
         <div
           style={{
             position: "relative",
@@ -72,7 +73,7 @@ const TitleTextSwiper: React.FC<TitleTextSwiperProps> = ({
             borderRadius: "10px",
           }}
         >
-          {cloudinaryIsOFF ? (
+          {mockImage ? (
             <Image
               src={"/home.jpg"}
               alt="Faro Beach Club"

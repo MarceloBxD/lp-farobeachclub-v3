@@ -1,14 +1,15 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import { Description } from "../Texts";
 import styles from "./styles.module.scss";
-import { animated, config, useSpring } from "react-spring";
+import { animated, useSpring } from "react-spring";
 import { button_theme } from "./data_button";
 import Load, { LoadProps } from "../Load";
 import { useApp } from "@/context/AppContext";
 import scssStyles from "@/utils/scssStyles";
 import DataLayer from "@/utils/DataLayer";
+import { useInView } from 'react-intersection-observer'; // Import to detect when button is in view
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -32,19 +33,6 @@ export interface ButtonProps
   ref?: React.Ref<HTMLButtonElement>;
 }
 
-/**
- * @name Button
- * @description Componente de botão
- * @param {string} variant - variant of button
- * @param {string} children - text of button
- * @param {React.ReactNode} icon - icon of button
- * @param {string} textColor - color of text
- * @param {boolean} wrap - wrap text
- * @param {function} onClick - function of button
- * @param {string} link - link of button
- * @param {LoadProps} load - load of button
- */
-
 const Button: React.FC<ButtonProps> = ({
   variant = "brand",
   children,
@@ -59,12 +47,29 @@ const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const { setBookingActive } = useApp();
+  
+  // Detect when button is in view
+  const { ref: inViewRef, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+
+  // Animation for appearance with stronger bounce and faster entry
+  const springProps = useSpring({
+    opacity: inView ? 1 : 0,
+    transform: inView ? 'scale(1)' : 'scale(0.8)',  // More bounce and smaller initial scale
+    config: {
+      tension: 280,  // Higher tension for more dramatic bounce
+      friction: 10,  // Lower friction to emphasize the bounce effect
+      duration: 300,  // Faster animation
+    },
+    from: {
+      transform: 'scale(0.8)',  // Start smaller for a noticeable entrance
+      opacity: 0,
+    },
+  });
 
   const [hoverAnimation, set] = useSpring(() => ({
     backgroundColor: button_theme[variant].bgColor,
     color: button_theme[variant].color,
     borderColor: button_theme[variant].borderColor,
-    config: config.stiff,
   }));
 
   const changeHover = (hover: boolean) => {
@@ -101,7 +106,6 @@ const Button: React.FC<ButtonProps> = ({
   };
 
   const onClick = () => {
-    console.log("openBooking", openBooking);
     openBooking && setBookingActive(true);
     props.onClick && props.onClick();
 
@@ -113,36 +117,42 @@ const Button: React.FC<ButtonProps> = ({
     });
   };
 
+  // Create a combined ref that works for both callback ref and RefObject
+  const setRefs = (el: HTMLButtonElement | null) => {
+    // Pass to inView ref
+    inViewRef(el);
+    // Pass to forwarded ref if it's an object or function
+    if (typeof ref === 'function') {
+      ref(el);
+    } else if (ref && 'current' in ref) {
+      if (ref && 'current' in ref) {
+        (ref as React.MutableRefObject<HTMLButtonElement | null>).current = el;
+      }
+    }
+  };
+
   const button = (
     <animated.button
       {...props}
       id={props.id}
-      className={`${eventBanner ? styles.button  : styles.buttonWithoutShadow}`}
-      ref={ref}
+      className={`${eventBanner ? styles.button : styles.buttonWithoutShadow}`}
+      ref={setRefs}  // Use the combined ref handler
       style={{
         ...props.style,
         ...hoverAnimation,
+        ...springProps, // Add appearance animation with more bounce
       }}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       onClick={onClick}
     >
       {load ? (
-        <div
-          style={{
-            width: 21,
-          }}
-        >
+        <div style={{ width: 21 }}>
           <Load variant={load.variant} color={"inherit"} size="100%" />
         </div>
       ) : (
         <>
-          <Description
-            style={{
-              color: "inherit",
-            }}
-            wrap={wrap}
-          >
+          <Description style={{ color: "inherit" }} wrap={wrap}>
             {children}
           </Description>
           {icon && <div className={styles.icon}>{icon}</div>}
@@ -162,14 +172,10 @@ const Button: React.FC<ButtonProps> = ({
             pageSection: "booking",
             pageSubsection: "form",
           });
-          if(openBooking)
-            setBookingActive(true);
+          if (openBooking) setBookingActive(true);
         }}
         target="_blank"
-        style={{
-          width: "100%",
-          height: "38px",
-        }}
+        style={{ width: "100%", height: "38px" }}
       >
         {button}
       </a>

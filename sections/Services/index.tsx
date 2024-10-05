@@ -1,20 +1,20 @@
-import React from "react";
-import { Description, Title } from "@/components/Texts";
-import { Wrapper } from "@/components";
-import { useApp } from "@/context/AppContext";
-import TitleText from "@/components/TitleText";
-import { Tokens } from "@/data/tokens";
-import styles from "./styles.module.scss";
+import React from "react"
+import { Description, Title } from "@/components/Texts"
+import { Button, Wrapper } from "@/components"
+import { useApp } from "@/context/AppContext"
+import TitleText from "@/components/TitleText"
+import { Tokens } from "@/data/tokens"
+import styles from "./styles.module.scss"
 const Services: React.FC<{}> = () => {
   const {
     device: { isMobile },
-  } = useApp();
+  } = useApp()
 
   const CheckIcon = () => (
     <svg viewBox="0 0 665.8 1000" fill="currentColor" height="1em" width="1em">
       <path d="M248 850c-22.667 0-41.333-9.333-56-28L12 586C1.333 570-2.667 552.667 0 534s11.333-34 26-46 31.667-16.667 51-14c19.333 2.667 35 12 47 28l118 154 296-474c10.667-16 25-26 43-30s35.667-1.333 53 8c16 10.667 26 25 30 43s1.333 35.667-8 53L306 816c-13.333 21.333-32 32-56 32l-2 2" />
     </svg>
-  );
+  )
 
   const offering_list = [
     "Serviço de A&B: Buffet de alta gastronomia.",
@@ -29,7 +29,7 @@ const Services: React.FC<{}> = () => {
     "Cozinha (equipamentos sob-consulta)",
     "Chapelaria",
     "Foyer",
-  ];
+  ]
 
   return (
     <>
@@ -119,9 +119,19 @@ const Services: React.FC<{}> = () => {
             />
           </div>
         </div>
+
+        <Button
+          openBooking
+          id="orcamento_click"
+          style={{
+            margin: "6vh auto",
+          }}
+        >
+          Faça seu <strong>orçamento</strong>
+        </Button>
       </Wrapper>
     </>
-  );
-};
+  )
+}
 
-export default Services;
+export default Services

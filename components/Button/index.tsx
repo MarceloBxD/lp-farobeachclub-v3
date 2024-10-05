@@ -54,7 +54,7 @@ const Button: React.FC<ButtonProps> = ({
   // Animation for appearance with stronger bounce and faster entry
   const springProps = useSpring({
     opacity: inView ? 1 : 0,
-    transform: inView ? 'scale(1.15)' : 'scale(0.8)',  // More bounce and smaller initial scale
+    transform: inView ? 'scale(1)' : 'scale(0.8)',  // More bounce and smaller initial scale
     config: {
       tension: 280,  // Higher tension for more dramatic bounce
       friction: 10,  // Lower friction to emphasize the bounce effect

@@ -94,8 +94,7 @@ function Home({
       <Booking formId={FORM_ID} portalId={PORTAL_ID} phone={PHONE_NUMBER} />
 
       <Banner content={homeBanner} event={getEventDisclosed(events)} />
-
-      <Headline
+       <Headline
         texts={eventContent[0].texts}
         button={eventContent[0].button}
         anchor={eventContent[0].anchor}
@@ -135,7 +134,6 @@ export const getStaticProps = async () => {
     homeCarrossel2,
     homeCarrossel3,
     allEvents,
-    homeBanner,
     faq,
   ] = await Promise.all([
     getEntries({
@@ -149,9 +147,6 @@ export const getStaticProps = async () => {
     }),
     getEntries({
       contentType: "event",
-    }),
-    getEntries({
-      contentType: "homeBanner",
     }),
     getEntries({
       contentType: "faq",
@@ -191,8 +186,6 @@ export const getStaticProps = async () => {
     treatHomeBanner(homeCarrossel3),
   ];
 
-  const treatedHomeBannerUrls = treatedHomeBanner(homeBanner);
-
   const events = treatContent(allEvents).filter(
     (event) => event.type === "Programação"
   );
@@ -206,7 +199,6 @@ export const getStaticProps = async () => {
     props: {
       events,
       homeContent: treatedImages,
-      homeBanner: treatedHomeBannerUrls,
       PORTAL_ID,
       midia,
       customers,
@@ -215,7 +207,7 @@ export const getStaticProps = async () => {
       MAPS_API_KEY,
       faq,
     },
-    revalidate: 60 * 5, // 5 minute
+    revalidate: 60 * 5, // 5 minutes
   };
 };
 

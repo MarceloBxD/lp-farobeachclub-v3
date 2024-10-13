@@ -1,8 +1,8 @@
-import Analytics from "@/components/Analytics";
-import axios from "axios";
-import { Metadata } from "next";
-import { Html, Head, Main, NextScript } from "next/document";
-import Script from "next/script";
+import Analytics from "@/components/Analytics"
+import axios from "axios"
+import { Metadata } from "next"
+import { Html, Head, Main, NextScript } from "next/document"
+import Script from "next/script"
 
 export const metadata: Metadata = {
   title: "Faro Beach Club",
@@ -24,13 +24,13 @@ export const metadata: Metadata = {
     },
   ],
   applicationName: "Faro Beach Club",
-};
+}
 
 type Props = {
-  GTM_ID: string;
-  GOOGLE_ANALYTICS_ID: string;
-  SMART_TARGET_ID: string;
-};
+  GTM_ID: string
+  GOOGLE_ANALYTICS_ID: string
+  SMART_TARGET_ID: string
+}
 
 function Document({ SMART_TARGET_ID }: Props) {
   return (
@@ -93,19 +93,24 @@ function Document({ SMART_TARGET_ID }: Props) {
           type="text/javascript"
           src={"https://smartarget.online/loader.js?u=" + SMART_TARGET_ID}
         />
-        <Script src="https://player.vimeo.com/api/player.js"/>
+        <Script src="https://player.vimeo.com/api/player.js" />
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7264556982952268"
+          crossOrigin="anonymous"
+        />
       </body>
     </Html>
-  );
+  )
 }
 
-export default Document;
+export default Document
 
 export async function getStaticProps() {
-  const SMART_TARGET_ID = process.env.SMARTARGET_API_KEY as string;
+  const SMART_TARGET_ID = process.env.SMARTARGET_API_KEY as string
   return {
     props: {
       SMART_TARGET_ID,
     },
-  };
+  }
 }

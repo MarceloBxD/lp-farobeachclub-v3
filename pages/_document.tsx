@@ -84,6 +84,10 @@ function Document({ SMART_TARGET_ID }: Props) {
         <link rel="apple-touch-icon" href="/logo.png" />
 
         <link rel="icon" href="/logo.png" />
+        <meta
+          name="google-adsense-account"
+          content="ca-pub-7264556982952268"
+        ></meta>
       </Head>
       <body>
         <Main />
@@ -94,11 +98,6 @@ function Document({ SMART_TARGET_ID }: Props) {
           src={"https://smartarget.online/loader.js?u=" + SMART_TARGET_ID}
         />
         <Script src="https://player.vimeo.com/api/player.js" />
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7264556982952268"
-          crossOrigin="anonymous"
-        />
       </body>
     </Html>
   )

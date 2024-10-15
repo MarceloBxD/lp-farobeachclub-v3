@@ -17,15 +17,16 @@ import {
 import { ContentProps, CustomerProps } from "@/types/content";
 import Head from "next/head";
 import { MapEl } from "@/components/Map";
-import { cloudinary } from "@/services/useCloudinary";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import * as gtag from "@/lib/gtagHelper";
 import Faq from "@/sections/Faq";
 import QuemSomos from "@/sections/QuemSomos";
 import Headline from "@/sections/Headline";
 import Testimonials from "@/sections/Testimonials";
 import Services from "@/sections/Services";
+import React from "react";
+import axios from "axios";
 
 type HomeProps = {
   homeContent: {
@@ -46,7 +47,6 @@ type HomeProps = {
   PHONE_NUMBER: string;
   MAPS_API_KEY: string;
   midia: ContentProps[];
-  videoUrl: string;
 };
 
 function Home({
@@ -56,7 +56,6 @@ function Home({
   FORM_ID,
   customers,
   PORTAL_ID,
-  videoUrl,
   PHONE_NUMBER,
   midia,
   MAPS_API_KEY,
@@ -95,8 +94,7 @@ function Home({
       <Booking formId={FORM_ID} portalId={PORTAL_ID} phone={PHONE_NUMBER} />
 
       <Banner content={homeBanner} event={getEventDisclosed(events)} />
-
-      <Headline
+       <Headline
         texts={eventContent[0].texts}
         button={eventContent[0].button}
         anchor={eventContent[0].anchor}
@@ -111,7 +109,6 @@ function Home({
       />
 
       <QuemSomos
-        videoUrl={videoUrl}
         eventContent={eventContent}
         homeContent={homeContent}
       />
@@ -137,7 +134,6 @@ export const getStaticProps = async () => {
     homeCarrossel2,
     homeCarrossel3,
     allEvents,
-    homeBanner,
     faq,
   ] = await Promise.all([
     getEntries({
@@ -153,9 +149,6 @@ export const getStaticProps = async () => {
       contentType: "event",
     }),
     getEntries({
-      contentType: "homeBanner",
-    }),
-    getEntries({
       contentType: "faq",
     }),
   ]);
@@ -169,10 +162,6 @@ export const getStaticProps = async () => {
   const midia = treatContent(allMidia).filter((item) => {
     return item.type === "Midia";
   });
-
-  const video = cloudinary.video_url("events_video");
-
-  const videoHttps = video.replace("http:", "https:");
 
   const treatedHomeBanner = (homeBanner: any) => {
     if (!homeBanner[0]?.fields) {
@@ -197,10 +186,6 @@ export const getStaticProps = async () => {
     treatHomeBanner(homeCarrossel3),
   ];
 
-  const treatedHomeBannerUrls = treatedHomeBanner(homeBanner);
-
-  console.log(treatedHomeBannerUrls);
-
   const events = treatContent(allEvents).filter(
     (event) => event.type === "Programação"
   );
@@ -214,9 +199,7 @@ export const getStaticProps = async () => {
     props: {
       events,
       homeContent: treatedImages,
-      homeBanner: treatedHomeBannerUrls,
       PORTAL_ID,
-      videoUrl: videoHttps,
       midia,
       customers,
       FORM_ID,
@@ -224,7 +207,7 @@ export const getStaticProps = async () => {
       MAPS_API_KEY,
       faq,
     },
-    revalidate: 60 * 5, // 5 minute
+    revalidate: 60 * 5, // 5 minutes
   };
 };
 

@@ -64,7 +64,7 @@ export const Footer = () => {
               fontSize: "16px",
             }}
           >
-            <b> Faro Beach Club ® 2023</b>
+            <b> Faro Beach Club ® 2024</b>
             <br />
             <a href="/privacidade">Políticas de Privacidade</a>
             <br />

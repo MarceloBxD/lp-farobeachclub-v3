@@ -103,7 +103,7 @@ export const getStaticProps = async () => {
       PHONE_NUMBER,
       MAPS_API_KEY,
     },
-    revalidate: 60 * 5, // 5 minutes
+    revalidate: 60 * 15, // 15 minutes
   };
 };
 

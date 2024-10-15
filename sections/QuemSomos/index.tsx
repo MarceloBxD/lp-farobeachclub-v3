@@ -10,10 +10,11 @@ import Swiper from "@/components/Swiper";
 import Image from "next/image";
 
 const QuemSomos: React.FC<{
-  videoUrl: string;
   eventContent: any;
   homeContent: any;
-}> = ({ videoUrl, eventContent, homeContent }) => {
+}> = ({
+    eventContent, homeContent
+}) => {
   const {
     device: { isMobile },
   } = useApp();
@@ -80,7 +81,7 @@ const QuemSomos: React.FC<{
               marginBottom: 0,
               minHeight: "fit-content",
             }}
-            video={videoUrl}
+            mockImage
           />
         </div>
 

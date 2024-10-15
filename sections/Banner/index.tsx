@@ -1,47 +1,53 @@
-import React, { useEffect, useState } from "react";
-import Image from "next/legacy/image";
-import Logo from "@/components/Logo";
-import styles from "./styles.module.scss";
-import { ArrowDownBanner } from "@/components/ArrowDownBanner";
-import DisclosureEvent from "@/components/DisclosureEvent";
-import { ContentProps } from "@/types/content";
-import SoundWave from "@/components/SoundWave";
-import BannerButton from "@/components/BannerButton";
-import { isVideoUrl } from "@/utils/isVideo";
-import { useApp } from "@/context/AppContext";
+import React, { useEffect, useState } from "react"
+import Image from "next/legacy/image"
+import Logo from "@/components/Logo"
+import styles from "./styles.module.scss"
+import { ArrowDownBanner } from "@/components/ArrowDownBanner"
+import DisclosureEvent from "@/components/DisclosureEvent"
+import { ContentProps } from "@/types/content"
+import SoundWave from "@/components/SoundWave"
+import { isVideoUrl } from "@/utils/isVideo"
+import bannerPoster from "@/public/home.jpg"
 
 type BannerProps = {
-  event?: ContentProps;
+  event?: ContentProps
   content: {
-    mobile: string[];
-    desktop: string[];
-  };
-};
+    mobile: string[]
+    desktop: string[]
+  }
+}
 
 const Banner: React.FC<BannerProps> = ({ event, content }) => {
-  const { cloudinaryIsOFF } = useApp();
-  const [url, setUrl] = useState<string>(content.desktop[0]);
-  const [isMuted, setIsMuted] = useState<boolean>(true);
+  const [isMuted, setIsMuted] = useState<boolean>(true)
 
-  const toggleMute = () => setIsMuted(!isMuted);
+  const [videoUrl, setVideoUrl] = useState('https://player.vimeo.com/progressive_redirect/playback/1016544594/rendition/1080p/file.mp4?loc=external&signature=e60d7c349b096055e4bb3211a80571bc995ceeaad3837f1d0c1fef1d55e458f2');
+
+  const toggleMute = () => setIsMuted(!isMuted)
 
   useEffect(() => {
-    const handleResize = () => {
-      setUrl(window.innerWidth < 768 ? content.mobile[0] : content.desktop[0]);
-    };
+      const handleResize = () => {
+        if (window.innerWidth < 768) {
+          setVideoUrl('https://player.vimeo.com/progressive_redirect/playback/1016544619/rendition/1080p/file.mp4?loc=external&signature=abe98db71152194fc5516436697fa5c293656d28ecbd1cdcdd3244bbb0d09005')
+        } else {
+          setVideoUrl('https://player.vimeo.com/progressive_redirect/playback/1016544594/rendition/1080p/file.mp4?loc=external&signature=e60d7c349b096055e4bb3211a80571bc995ceeaad3837f1d0c1fef1d55e458f2')
+        }
+      }
 
-    window.addEventListener("resize", handleResize);
-    handleResize();
-    return () => window.removeEventListener("resize", handleResize);
-  }, [content.desktop, content.mobile]);
+      handleResize()
+
+      window.addEventListener('resize', handleResize)
+
+      return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
 
   return (
     <div className={styles.wrapper}>
       <>
         <DisclosureEvent event={event} />
-        {cloudinaryIsOFF || !isVideoUrl(url) ? (
+        {!isVideoUrl(videoUrl) ? (
           <Image
-            src={"/home.jpg"}
+            src={bannerPoster}
             alt="Faro Beach Club"
             layout="fill"
             objectFit="cover"
@@ -49,7 +55,7 @@ const Banner: React.FC<BannerProps> = ({ event, content }) => {
           />
         ) : (
           <video
-            src={url}
+            src={videoUrl}
             width="100%"
             height="100vh"
             autoPlay
@@ -57,10 +63,9 @@ const Banner: React.FC<BannerProps> = ({ event, content }) => {
             loop
             playsInline
             preload="auto"
-            poster="public/poster.png"
             onLoad={() => {
-              const video = document.querySelector("video");
-              video?.play();
+              const video = document.querySelector("video")
+              video?.play()
             }}
           />
         )}
@@ -70,11 +75,11 @@ const Banner: React.FC<BannerProps> = ({ event, content }) => {
         <Logo />
       </div>
       <div className="absolute h-[100dvh] w-screen">
-        {isVideoUrl(url) && <SoundWave onClick={toggleMute} muted={isMuted} />}
+        {isVideoUrl(videoUrl) && <SoundWave onClick={toggleMute} muted={isMuted} />}
         <ArrowDownBanner />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Banner;
+export default Banner

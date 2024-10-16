@@ -86,7 +86,7 @@ function Document({ SMART_TARGET_ID }: Props) {
         <link rel="icon" href="/logo.png" />
         <meta
           name="google-adsense-account"
-          content="ca-pub-7264556982952268"
+          content="ca-pub-8009393785731572"
         ></meta>
       </Head>
       <body>
